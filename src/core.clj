@@ -1,5 +1,16 @@
 (ns core)
 
+(defn f
+  ([floating-number]
+   (format "%.2f" floating-number))
+  ([floating-number scale]
+   (format (str "%." scale "f") floating-number)))
+
+(comment
+  ;; doesnt work for now :///
+  (println #f 1321321.1321)
+  )
+
 (defn product
   ([coll]
    (reduce * 1 coll))
