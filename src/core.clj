@@ -8,7 +8,7 @@
 
 (comment
   ;; doesnt work for now :///
-  (println #f 1321321.1321)
+  ;;(println #f 1321321.1321)
   )
 
 (defn product
@@ -45,6 +45,8 @@
         fraction (product (inc r) (inc n))
         denominator (fact diff)]
     (/ fraction denominator)))
+
+(def c combi)
 
 
 (comment
