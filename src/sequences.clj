@@ -10,6 +10,17 @@
    (map f)
    + 0 (range-in start end)))
 
+(defn fib
+  [n]
+  ;; TODO: nice to have another arity for supplying the init elements of res
+  ;; TODO: make this lazy
+  (loop [res [1 1]]
+    (if (>= (count res) n)
+      res
+      (recur (conj res (+ (nth res (dec (count res)))
+                          (nth res (- (count res) 2))))))))
+
+
 (comment
   (def f #(- (* 3 % %)
              (* 5 %)))
