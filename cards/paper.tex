@@ -1,0 +1,130 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm,textcomp}
+
+\title{On Math}
+\author{Jacek Walczak}
+\date{February - March 2025}
+
+\makeatletter
+\newenvironment{leftequation}{%
+  \begin{equation}%
+    \hspace*{-\displaywidth}%
+  }{%
+  \end{equation}%
+}
+\makeatother
+
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+Math content here...
+
+inline math: $x^2 + y^2 = z^2$
+display math: \begin{equation}x^2 + y^2 = z^2 \end{equation}
+
+\section{Default symbols}
+
+A - area
+
+\section{Trigonometry}
+
+\begin{equation}
+  \begin{gathered}
+    \sin\alpha = \frac{\text{opposite}}{\text{hypotenuse}} \\
+    \cos\alpha = \frac{\text{adjacent}}{\text{hypotenuse}} \\
+    \tan\alpha = \frac{\text{opposite}}{\text{adjacent}} \\
+    \csc\alpha = \frac{1}{\sin{\alpha}} =
+    \frac{\text{hypotenuse}}{\text{opposite}} \\
+    \sec\alpha = \frac{1}{\cos{\alpha}} =
+    \frac{\text{hypotenuse}}{\text{adjacent}} \\
+    \cot\alpha = \frac{1}{\tan{\alpha}} =
+    \frac{\text{adjacent}}{\text{opposite}} \\
+  \end{gathered}
+\end{equation}
+
+\subsection{Sine values}
+\begin{equation}
+  \begin{gathered}
+    \sin(0°) = 0 \\
+    \sin(30°) = \frac{1}{2} \\
+    \sin(45°) = \frac{\sqrt{2}}{2} \\
+    \sin(60°) = \frac{\sqrt{3}}{2} \\
+    \sin(90°) = 1
+  \end{gathered}
+\end{equation}
+
+\subsection{Cosine values}
+\begin{equation}
+  \begin{gathered}
+    \cos(0°) = 1 \\
+    \cos(30°) = \frac{\sqrt{3}}{2} \\
+    \cos(45°) = \frac{\sqrt{2}}{2} \\
+    \cos(60°) = \frac{1}{2} \\
+    \cos(90°) = 0
+  \end{gathered}
+\end{equation}
+
+% Tangent values
+
+\subsection{Tangent values}
+\begin{equation}
+  \begin{gathered}
+    \tan(0°) = 0 \\
+    \tan(30°) = \frac{1}{\sqrt{3}} = \frac{\sqrt{3}}{3} \\
+    \tan(45°) = 1 \\
+    \tan(60°) = \sqrt{3} \\
+    \tan(90°) = \text{undefined}
+  \end{gathered}
+\end{equation}
+
+\subsection{Formula of a general triangle}
+
+\begin{equation}
+  A = \frac{1}{2}ab \sin{C}
+\end{equation}
+where 'C' (TODO: italize all the 'things') is the measure of the angle between sides 'a' and 'b' (also called 'included angle)
+
+\section{Complex numbers}
+\section{Functions}
+\subsection{Quadratic formula}
+\begin{equation}
+  x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+\end{equation}
+\subsection{Rational functions}
+1. asymptotes
+2. roots
+\subsection{Exponential functions}
+\subsection{Logarithmic functions}
+\section{Statistics}
+\section{Logarithms}
+- product rule
+\begin{equation}
+\end{equation}
+
+- quotient rule
+\begin{equation}
+\end{equation}
+
+- power rule
+\begin{equation}
+\end{equation}
+
+- change of base
+\begin{equation}
+\end{equation}
+
+- equating arguments
+\begin{equation}
+\end{equation}
+
+\section{Polynomial identities}
+\subsection{Binomial formulas}
+
+
+\subsection{Cubic formulas}
+
+
+\end{document}

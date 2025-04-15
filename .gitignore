@@ -1,2 +1,8 @@
 .cpcache/
 .nrepl-port
+*.log
+
+# latex
+cards/*.aux
+cards/*.pdf
+cards/*.log
