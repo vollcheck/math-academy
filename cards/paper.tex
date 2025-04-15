@@ -87,11 +87,85 @@ Example:
   \end{gathered}
 \end{equation}
 
+\section{Geometry}
+\subsection{Rigid motions}
+Or sometimes - any transformations that does not change the distances
+and angles between points in a figure. They are ANGLE-PRESERVING and
+DISTANCE-PRESERVING.
+
+Rigid motions types:
+- translations
+- rotations
+- reflections
+
+Not a rigid motions:
+- dilations
+- stretches
+
+
 \section{Functions}
 \subsection{Quadratic formula}
 \begin{equation}
   x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
 \end{equation}
+
+\subsection{Factor theorem}
+For polynomial, if we know root, we can determine a factor of the
+polynomial. If $p(x)$ is a polynomial and $x=r$ is a root of $p(x)$ then
+\begin{equation}
+  \begin{gathered}
+  p(r) = 0 \\
+  so (x-r) is a factor of p(x) \\
+  generally: (ax-b) is a factor of a polynomial p(x) then \\
+  x = \frac{b}{a} is a root of p(x)
+\end{gathered}
+\end{equation}
+
+\subsection{Inverse functions}
+Inverse functions are denoted by $f^{-1}(x)$.
+
+For $f(x)$ that maps $x=2$ to $y=0$ an inverse function $f^{-1}(x)$ instantiation would be
+$f^{-1}(0)=0$.
+
+Generally it is a simple composition:
+\begin{equation}
+  \begin{gathered}
+    f^{-1}(f(x)) = x \\
+    so \\
+    (f^{-1} \circ f)(x) = x
+  \end{gathered}
+\end{equation}
+
+Calculate inverse function
+1. swap $x$ and $y$
+2. solve for $y$
+
+Example:
+\begin{equation}
+  \begin{gathered}
+    f(x) = 3x-9 \\
+    y = 3x-9 \\
+    x = 3y-9 \\
+    x-3y=-9 \\
+    x+9=3y \\
+    \frac{x+9}{3}=y \\
+    f^{-1}(x)=\frac{x+9}{3}
+  \end{gathered}
+\end{equation}
+
+Domain and range of inverse function:
+Domain of a function $f(x)$ is the range of its inverse function $f^{-1}(x)$.
+Range of a function $f(x)$ is the domain of its inverse function $f^{-1}(x)$.
+
+\subsection{Multiplicities of the roots of a polynomial}
+\begin{equation}
+  p(x) = (x-5)^2(x+8)
+\end{equation}
+for that polynomial roots are $x=5$ and $x=-8$ but factor $(x-5)^2$
+appears TWICE so it is a MULTIPLE ROOT
+$(x+8)$ on the other hand is a SIMPLE ROOT.
+
+
 
 \subsection{Rational functions}
 Horizontal asymptotes
@@ -165,5 +239,63 @@ Sum rule:
 
 
 \subsection{Cubic formulas}
+
+\section{Derivatives}
+Average rate of change of the function $f(x)$ on the interval $[a, a+h]$
+
+\begin{equation}
+  \frac{\Delta y}{\Delta x} = \frac{f(a+h) - f(a)}{h}
+\end{equation}
+
+Instanteous rate of change of the function at the point $x=a$ is the limit of the average
+rate of change as $h \rightarrow 0$. It's denoted by $f'(a)$ and given by:
+
+\begin{equation}
+  f'(a) = \lim_{h \rightarrow 0}\frac{f(a+h) - f(a)}{h}
+\end{equation}
+
+and its value is equal to the slope of the tangent line to the curve $y = f(x)$ at $x=a$.
+Also it can be defined as:
+\begin{equation}
+  f'(a) = \lim_{x \rightarrow a}\frac{f(x) - f(a)}{x-a}
+\end{equation}
+
+\section{Integrals}
+Also called \textit{antiderivatives}. To represent integrals
+
+
+Integral of a sum of functions
+\begin{equation}
+  \int f(x) \pm g(x) \, dx = \int f(x) \, dx \pm \int g(x) \, dx
+\end{equation}
+
+Integral of a reciprocal function
+\begin{equation}
+  \int \frac{1}{x} \, dx = \int \ln abs(x) + C
+\end{equation}
+and also:
+\begin{equation}
+  \int \frac{1}{x} \, dx = \int \ln|x| + C = \ln abs(x) + \ln K = \ln (K (abs(x))
+\end{equation}
+
+Integral of an exponential function
+\begin{equation}
+  \int e^x \, dx = e^x + C
+\end{equation}
+with general base we know that
+\begin{equation}
+  \frac{d}{dx} (a^x) = a^x \ln a
+\end{equation}
+so reversing:
+\begin{equation}
+  \int a^x \, dx = \frac{a^x}{\ln a} + C
+\end{equation}
+
+Marked integral for future
+\begin{equation}
+  \int_{a}^{b} f(x) \, dx
+\end{equation}
+
+
 
 \end{document}
