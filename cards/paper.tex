@@ -5,25 +5,9 @@
 \author{Jacek Walczak}
 \date{February - March 2025}
 
-\makeatletter
-\newenvironment{leftequation}{%
-  \begin{equation}%
-    \hspace*{-\displaywidth}%
-  }{%
-  \end{equation}%
-}
-\makeatother
-
-
 \begin{document}
 
 \maketitle
-
-\section{Introduction}
-Math content here...
-
-inline math: $x^2 + y^2 = z^2$
-display math: \begin{equation}x^2 + y^2 = z^2 \end{equation}
 
 \section{Default symbols}
 
@@ -33,14 +17,14 @@ A - area
 
 \begin{equation}
   \begin{gathered}
-    \sin\alpha = \frac{\text{opposite}}{\text{hypotenuse}} \\
-    \cos\alpha = \frac{\text{adjacent}}{\text{hypotenuse}} \\
-    \tan\alpha = \frac{\text{opposite}}{\text{adjacent}} \\
-    \csc\alpha = \frac{1}{\sin{\alpha}} =
+    \sin\theta = \frac{\text{opposite}}{\text{hypotenuse}} \\
+    \cos\theta = \frac{\text{adjacent}}{\text{hypotenuse}} \\
+    \tan\theta = \frac{\text{opposite}}{\text{adjacent}} \\
+    \csc\theta = \frac{1}{\sin{\theta}} =
     \frac{\text{hypotenuse}}{\text{opposite}} \\
-    \sec\alpha = \frac{1}{\cos{\alpha}} =
+    \sec\theta = \frac{1}{\cos{\theta}} =
     \frac{\text{hypotenuse}}{\text{adjacent}} \\
-    \cot\alpha = \frac{1}{\tan{\alpha}} =
+    \cot\theta = \frac{1}{\tan{\theta}} =
     \frac{\text{adjacent}}{\text{opposite}} \\
   \end{gathered}
 \end{equation}
@@ -48,22 +32,22 @@ A - area
 \subsection{Sine values}
 \begin{equation}
   \begin{gathered}
-    \sin(0°) = 0 \\
-    \sin(30°) = \frac{1}{2} \\
-    \sin(45°) = \frac{\sqrt{2}}{2} \\
-    \sin(60°) = \frac{\sqrt{3}}{2} \\
-    \sin(90°) = 1
+    \sin(0) = 0 \\
+    \sin(30) = \frac{1}{2} \\
+    \sin(45) = \frac{\sqrt{2}}{2} \\
+    \sin(60) = \frac{\sqrt{3}}{2} \\
+    \sin(90) = 1
   \end{gathered}
 \end{equation}
 
 \subsection{Cosine values}
 \begin{equation}
   \begin{gathered}
-    \cos(0°) = 1 \\
-    \cos(30°) = \frac{\sqrt{3}}{2} \\
-    \cos(45°) = \frac{\sqrt{2}}{2} \\
-    \cos(60°) = \frac{1}{2} \\
-    \cos(90°) = 0
+    \cos(0) = 1 \\
+    \cos(30) = \frac{\sqrt{3}}{2} \\
+    \cos(45) = \frac{\sqrt{2}}{2} \\
+    \cos(60) = \frac{1}{2} \\
+    \cos(90) = 0
   \end{gathered}
 \end{equation}
 
@@ -72,11 +56,11 @@ A - area
 \subsection{Tangent values}
 \begin{equation}
   \begin{gathered}
-    \tan(0°) = 0 \\
-    \tan(30°) = \frac{1}{\sqrt{3}} = \frac{\sqrt{3}}{3} \\
-    \tan(45°) = 1 \\
-    \tan(60°) = \sqrt{3} \\
-    \tan(90°) = \text{undefined}
+    \tan(0) = 0 \\
+    \tan(30) = \frac{1}{\sqrt{3}} = \frac{\sqrt{3}}{3} \\
+    \tan(45) = 1 \\
+    \tan(60) = \sqrt{3} \\
+    \tan(90) = \text{undefined}
   \end{gathered}
 \end{equation}
 
@@ -85,17 +69,62 @@ A - area
 \begin{equation}
   A = \frac{1}{2}ab \sin{C}
 \end{equation}
-where 'C' (TODO: italize all the 'things') is the measure of the angle between sides 'a' and 'b' (also called 'included angle)
+where \textit{C} is the measure of the angle between sides \textit{a} and \textit{b} (also called \textit{included angle})
 
 \section{Complex numbers}
+\subsection{Argument of a complex number}
+There is natural angle $\theta$ that \textit{z} makes with real x-axis. This angle is called \textit{the argument of z}. The numeric value of $arg(z)$ is given in radians and also
+\begin{equation}
+0 \leq arg(z) \leq 2\pi
+\end{equation}
+
+Example:
+\begin{equation}
+  \begin{gathered}
+  z = 3 + 4i \\
+  \tan \theta = \frac{4}{3} \\
+  \theta = \arctan\frac{4}{3} \approx 0.93
+  \end{gathered}
+\end{equation}
+
 \section{Functions}
 \subsection{Quadratic formula}
 \begin{equation}
   x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
 \end{equation}
+
 \subsection{Rational functions}
-1. asymptotes
-2. roots
+Horizontal asymptotes
+1. Identify the 'dominant term' which is a leading term of the polynomial though we
+usually ugnore the coefficients.
+
+2. Divide every term in the numerator and denominator of $f(x)$ by the dominant term.
+
+3. Evaluate the remaining expression as $x \to \infty$.
+
+
+Roots
+
+
+\subsection{Radical function}
+Range of a radical function $f(x) = \sqrt[n]{x}$ depends on index \textit{n} whether it's even or odd.
+
+For odd index like in function $f(x) = -2\sqrt[3]{3x-2}+2$ range is $(-\infty, \infty)$.
+Transformations do not change its range.
+
+For even index $n$ range is $x \geqslant 0$ but the transformations can change the range.
+Horizontal shifts and stretches doesn't change the the range.
+
+For example for function $g(x) = -3\sqrt[4]{2x-1}-2$:
+\begin{equation}
+  \begin{gathered}
+  \sqrt[4]{2x-1} \geqslant 0 \\
+  -3\sqrt[4]{2x-1} \leqslant 0 \\
+  -3\sqrt[4]{2x-1} \leqslant -2 \\
+  g(x) \leqslant -2
+  \end{gathered}
+\end{equation}
+
 \subsection{Exponential functions}
 \subsection{Logarithmic functions}
 \section{Statistics}
@@ -120,11 +149,21 @@ where 'C' (TODO: italize all the 'things') is the measure of the angle between s
 \begin{equation}
 \end{equation}
 
+\section{Finite sequences}
+Coefficient rule:
+\begin{equation}
+  \sum_{i=1}^{n} ca_i = c * \sum_{i=1}^{n} a_i
+\end{equation}
+
+Sum rule:
+\begin{equation}
+  \sum_{i=1}^{n} (a_i+b_i) = \sum_{i=1}^{n} a_i + \sum_{i=1}^{n} b_i
+\end{equation}
+
 \section{Polynomial identities}
 \subsection{Binomial formulas}
 
 
 \subsection{Cubic formulas}
-
 
 \end{document}
