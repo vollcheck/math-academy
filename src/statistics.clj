@@ -29,6 +29,86 @@
 (defn z-index [x mean variance]
   (/ (- x mean) (m/sqrt variance)))
 
+(defn covariance [coll1 coll2]
+  (assert (count coll1) (count coll2))
+  (let [n (count coll1)
+        mean1 (mean coll1)
+        mean2 (mean coll2)
+        diffs1 (mapv #(- % mean1) coll1)
+        diffs2 (mapv #(- % mean2) coll2)]
+    (/ (->> (map * diffs1 diffs2)
+            (reduce + 0))
+       n)))
+
+(defn sum-by [xf coll]
+  (transduce xf + 0 coll))
+
+(defn mean-estimate
+  "estimates a mean based on vec of vecs [midpoint frequency]"
+  [vecs]
+  (let [n (sum-by (map second) vecs)
+        xf (map (fn [[midpoint frequency]] (* midpoint frequency)))]
+    (-> (sum-by xf vecs)
+        (/ n)
+        float)))
+
+(defn variance-estimate
+  "again, vec of vecs [midpoint frequency]"
+  [vecs]
+  (let [n (sum-by (map second) vecs)
+        xf (map (fn [[midpoint frequency]] (* midpoint frequency)))
+        mean (-> (sum-by xf vecs) (/ n) float)]
+    (-> (transduce
+         (map (fn [[midpoint frequency]]
+                (-> (- midpoint mean)
+                    (m/pow 2)
+                    (* frequency))))
+         + 0
+         vecs)
+        (/ n))))
+
+(defn std-dev-estimation [vecs]
+  (m/sqrt (variance-estimate vecs)))
+
+(comment
+  "16.04.2025"
+  (mean-estimate [[415 1]
+                  [445 3]
+                  [475 2]
+                  [505 2]])
+  ;; => 463.75
+
+  (def data1 [[15 30]
+              [25 20]
+              [35 50]])
+  (variance-estimate data1)
+  ;; => 76.0
+  (std-dev-estimation data1)
+  ;; => 8.717797887081348
+
+  (def data2 [[7.5 6]
+              [17.5 4]
+              [22 2]
+              [27 3]])
+  (variance-estimate data2)
+  ;; => 58.5
+
+  (def data3 [[5 2]
+              [15 4]
+              [25 4]
+              [35 5]])
+  (variance-estimate data3)
+  ;; => 109.33333333333333
+  (std-dev-estimation data3)
+  ;; => 10.456258094238748
+  )
+
+(comment
+  "01.04.2025"
+  (covariance [6 -2 7 1] [5 -1 4 0])
+  (covariance [4 4 -4 4] [-1 -2 7 4])
+  (covariance [8 5 9 10] [71 55 81 97])
+  )
 
 (comment
   (z-index 21.5 25 4.18)
