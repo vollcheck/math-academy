@@ -29,16 +29,19 @@
 (defn z-index [x mean variance]
   (/ (- x mean) (m/sqrt variance)))
 
-(defn covariance [coll1 coll2]
+(defn sum-of-squares [coll1 coll2]
   (assert (count coll1) (count coll2))
   (let [n (count coll1)
         mean1 (mean coll1)
         mean2 (mean coll2)
         diffs1 (mapv #(- % mean1) coll1)
         diffs2 (mapv #(- % mean2) coll2)]
-    (/ (->> (map * diffs1 diffs2)
-            (reduce + 0))
-       n)))
+    (->> (map * diffs1 diffs2)
+         (reduce + 0))))
+
+(defn covariance [coll1 coll2]
+  (/ (sum-of-squares coll1 coll2)
+     (count coll1)))
 
 (defn sum-by [xf coll]
   (transduce xf + 0 coll))
@@ -69,6 +72,17 @@
 
 (defn std-dev-estimation [vecs]
   (m/sqrt (variance-estimate vecs)))
+
+(comment
+  "17.04.2025"
+  (sum-of-squares [123 122 121 120 125 127]
+                  [102 111 110 105 106 108])
+  (float (/ 69 15))
+  (float (/ 56 16))
+
+  (sum-of-squares [])
+  )
+
 
 (comment
   "16.04.2025"
