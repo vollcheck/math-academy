@@ -202,26 +202,93 @@ For example for function $g(x) = -3\sqrt[4]{2x-1}-2$:
 \subsection{Exponential functions}
 \subsection{Logarithmic functions}
 \section{Statistics}
+\subsection{Linear coefficient}
+Signed with $\rho$ (Greek letter called 'rho').
+- $\rho = 1$ means perfect positive correlation
+- $\rho = -1$ means perfect negative correlation
+- $\rho = 0$ no (linear) correlation
 \section{Logarithms}
-- product rule
+\begin{table}[htbp]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Property} & \textbf{Formula} \\
+\hline
+Product Rule & $\log_a(xy) = \log_a(x) + \log_a(y)$ \\
+\hline
+Quotient Rule & $\log_a\left(\frac{x}{y}\right) = \log_a(x) - \log_a(y)$ \\
+\hline
+Power Rule & $\log_a(x^n) = n \cdot \log_a(x)$ \\
+\hline
+Change of Base & $\log_a(x) = \frac{\log_b(x)}{\log_b(a)}$ \\
+\hline
+Equating arguments & $\log_af(x) = log_ag(x)$ is the same as $f(x) = g(x)$ \\
+\hline
+\end{tabular}
+\caption{Fundamental Properties of Logarithms}
+\label{tab:log_properties}
+\end{table}
+
+% Approach 1: Looser Table with More Spacing
+\begin{table}[htbp]
+\centering
+\renewcommand{\arraystretch}{1.5} % Increases vertical spacing between rows
+\setlength{\tabcolsep}{15pt} % Increases horizontal spacing between columns
+\begin{tabular}{|l|p{5cm}|p{6cm}|}
+\hline
+\textbf{Property} & \textbf{Formula} & \textbf{Description} \\
+\hline
+\textbf{Product Rule} &
+$\log_a(xy) = \log_a(x) + \log_a(y)$ &
+The logarithm of a product equals the sum of the individual logarithms. This transforms multiplication into addition. \\
+\hline
+\textbf{Quotient Rule} &
+$\log_a\left(\frac{x}{y}\right) = \log_a(x) - \log_a(y)$ &
+The logarithm of a quotient equals the difference of logarithms. This transforms division into subtraction. \\
+\hline
+\textbf{Power Rule} &
+$\log_a(x^n) = n \cdot \log_a(x)$ &
+The logarithm of a value raised to a power equals the power multiplied by the logarithm. This transforms exponentiation into multiplication. \\
+\hline
+\textbf{Change of Base} &
+$\log_a(x) = \frac{\log_b(x)}{\log_b(a)}$ &
+This formula allows conversion between different logarithmic bases, useful when calculating logarithms with bases other than those built into calculators. \\
+\hline
+\end{tabular}
+\caption{Fundamental Properties of Logarithms}
+\label{tab:log_properties}
+\end{table}
+
+% Approach 2: List Format with Titles for Each Property
+\section*{Logarithmic Properties}
+
+\subsection*{Product Rule}
 \begin{equation}
+\log_a(xy) = \log_a(x) + \log_a(y)
 \end{equation}
 
-- quotient rule
+The product rule allows us to express the logarithm of a product as the sum of logarithms. This is one of the fundamental properties that makes logarithms powerful for simplifying complex calculations. When we take the logarithm of a product of two numbers, we can break it down into the sum of the logarithms of each number.
+
+\subsection*{Quotient Rule}
 \begin{equation}
+\log_a\left(\frac{x}{y}\right) = \log_a(x) - \log_a(y)
 \end{equation}
 
-- power rule
+The quotient rule states that the logarithm of a quotient equals the logarithm of the numerator minus the logarithm of the denominator. This property transforms division operations into subtraction of logarithms, which is often easier to work with.
+
+\subsection*{Power Rule}
 \begin{equation}
+\log_a(x^n) = n \cdot \log_a(x)
 \end{equation}
 
-- change of base
+The power rule tells us that the logarithm of a number raised to a power equals the power multiplied by the logarithm of the number. This property is especially useful when dealing with expressions containing exponents, as it converts exponentiation to multiplication.
+
+\subsection*{Change of Base Formula}
 \begin{equation}
+\log_a(x) = \frac{\log_b(x)}{\log_b(a)}
 \end{equation}
 
-- equating arguments
-\begin{equation}
-\end{equation}
+The change of base formula allows us to convert logarithms from one base to another. This is particularly useful in practical applications since most calculators only directly compute natural logarithms (base $e$) and common logarithms (base 10). Using this formula, we can express logarithms of any base in terms of logarithms of a different base.
 
 \section{Finite sequences}
 Coefficient rule:
@@ -235,10 +302,15 @@ Sum rule:
 \end{equation}
 
 \section{Polynomial identities}
-\subsection{Binomial formulas}
-
-
-\subsection{Cubic formulas}
+\begin{flalign*}
+& (a + b)^2 = a^2 + 2ab + b^2 & \\
+& (a - b)^2 = a^2 - 2ab + b^2 & \\
+& (a + b)^3 = a^3 + 3a^2b + 3ab^2 + b^3 & \\
+& (a - b)^3 = a^3 - 3a^2b + 3ab^2 - b^3 & \\
+& a^2 - b^2 = (a + b)(a - b) & \\
+& a^3 - b^3 = (a - b)(a^2 + ab + b^2) & \\
+& a^3 + b^3 = (a + b)(a^2 - ab + b^2) &
+\end{flalign*}
 
 \section{Derivatives}
 Average rate of change of the function $f(x)$ on the interval $[a, a+h]$
