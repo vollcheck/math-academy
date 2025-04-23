@@ -1,5 +1,5 @@
 \documentclass{article}
-\usepackage{amsmath,amssymb,amsthm,textcomp}
+\usepackage{amsmath,amssymb,amsthm,textcomp,mathtools}
 
 \title{On Math}
 \author{Jacek Walczak}
@@ -70,6 +70,22 @@ A - area
   A = \frac{1}{2}ab \sin{C}
 \end{equation}
 where \textit{C} is the measure of the angle between sides \textit{a} and \textit{b} (also called \textit{included angle})
+
+\subsection{Law of sines}
+% TODO: image needed
+
+\begin{equation}
+  \frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C}
+\end{equation}
+
+and also:
+
+\begin{equation}
+  \frac{\sin A}{a} = \frac{\sin B}{b} = \frac{\sin C}{c}
+\end{equation}
+
+When we have obtuse angle we need to subtract the result from $180$.
+
 
 \section{Complex numbers}
 \subsection{Argument of a complex number}
@@ -164,6 +180,38 @@ polynomial. If $p(x)$ is a polynomial and $x=r$ is a root of $p(x)$ then
 \end{gathered}
 \end{equation}
 
+\subsection{Rational roots theorem}
+Support the rational number $\frac{p}{q}$ in lowest terms, is a root of a polynomial
+with integer coefficient.
+% TODO: add colors to differentiate
+Then 'p' must be the factor of the polynomial's constant term, and 'q' must be a factor
+of its leading coefficient.
+Given a polynomial with integer coefficient, any rational roots of the polynomial must take the
+form:
+\begin{equation}
+  \pm \frac{factor of the constant term}{factor of the leading coefficient}
+\end{equation}
+
+For example:
+\begin{equation}
+  f(x) = 8x^3 + 12x^2 + 6x + 2
+\end{equation}
+so we have 16 possible roots:
+\begin{equation}
+  \begin{gathered}
+    % TODO: strike through
+    \pm \frac{1}{1}, \pm \frac{1}{2}, \pm \frac{1}{4}, \pm \frac{1}{8}, \\
+    \pm \frac{2}{1}, \pm \frac{2}{2}, \pm \frac{2}{4}, \pm \frac{2}{8}
+  \end{gathered}
+\end{equation}
+
+Removing the duplicates, we have 10 possible rational roots:
+\begin{equation}
+  \pm \frac{1}{8}, \pm \frac{1}{4}, \pm \frac{1}{2}, \pm 1, \pm 2
+\end{equation}
+
+Note: it is about 'possible' rational roots.
+
 \subsection{Function composition}
 \begin{equation}
   (f \circ g)(x) = f(g(x))
@@ -212,7 +260,28 @@ for that polynomial roots are $x=5$ and $x=-8$ but factor $(x-5)^2$
 appears TWICE so it is a MULTIPLE ROOT
 $(x+8)$ on the other hand is a SIMPLE ROOT.
 
+\subsection{Intersection of a reciprocal function and a straight line}
+There are three possibilities when considering the intersection of a reciprocal
+function and a straight line:
+1. there are two intersection points
+2. there is only one intersection point
+3. there are no intersection points at all
 
+% TODO: needs images
+
+Typically, when computing the points of intersection of a reciprocal
+function and a line, we have to solve a system of two equations.
+
+% TODO: needs bracket over two first lines
+\begin{equation}
+  \begin{gathered}
+    y = x \\
+    y = \frac{1}{x} \\
+    x = \frac{1}{x} \\
+    x^2 = 1 \\
+    x = \pm 1
+  \end{gathered}
+\end{equation}
 
 \subsection{Rational functions}
 Horizontal asymptotes
@@ -250,9 +319,33 @@ For example for function $g(x) = -3\sqrt[4]{2x-1}-2$:
 \begin{equation}
   f(x) = \frac{1}{x}
 \end{equation}
+
+% TODO: not range?
+Domain of (transformed) reciprocal function
+\begin{equation}
+f(x) = \frac{a}{bx+c} + d
+\end{equation}
+has the horizontal asymptote $y = d$ therefore the range is
+\begin{equation}
+f(x) = \in (-\infty, d) \cup (d, \infty)
+\end{equation}
+
+% TODO: range
+Range of (transformed) reciprocal function
+\begin{equation}
+f(x) = \frac{a}{bx+c} + d
+\end{equation}
+has the vertical asymptote $y = d$ therefore the range is
+\begin{equation}
+f(x) = \in (-\infty, d) \cup (d, \infty)
+\end{equation}
+
+
 \subsection{Exponential functions}
 \subsection{Logarithmic functions}
 \section{Statistics}
+\subsection{Estimating a mean and variance}
+\subsection{Sum of squares}
 \subsection{Linear coefficient}
 Signed with $\rho$ (Greek letter called 'rho').
 - $\rho = 1$ means perfect positive correlation
@@ -364,7 +457,7 @@ Sum rule:
 \end{flalign*}
 
 \section{Derivatives}
-Average rate of change of the function $f(x)$ on the interval $[a, a+h]$
+Average rate of change of the function $f(x)$ on the interval $[a, a+h]$:
 
 \begin{equation}
   \frac{\Delta y}{\Delta x} = \frac{f(a+h) - f(a)}{h}
@@ -383,8 +476,71 @@ Also it can be defined as:
   f'(a) = \lim_{x \rightarrow a}\frac{f(x) - f(a)}{x-a}
 \end{equation}
 
+\subsection{Differentiation of an exponent function}
+\begin{equation}
+  \frac{d}{dx} (a^x) = a^x\ln a
+\end{equation}
+with special case:
+\begin{equation}
+  \frac{d}{dx} (e^x) = e^x\ln e = e^x * 1 = e^x
+\end{equation}
+\subsection{Chain rule for exponent function}
+\begin{equation}
+  \begin{gathered}
+    y = e^{3x} \\
+    y = e^u \\
+    u = 3x \\
+    \frac{dy}{dx} = \frac{dy}{du} * \frac{du}{dx} \\
+    \frac{d}{du} e^u = e^u \\
+    \frac{d}{dx} 3x = 3 \\
+    \frac{dy}{dx} = e^u * 3 = 3e^u = 3e^{3x}
+  \end{gathered}
+\end{equation}
+
+\subsection{Derivative of the (natural) logarithm}
+For natural logarithm:
+\begin{equation}
+  \frac{d}{dx}(\ln x) = \frac{1}{x}
+\end{equation}
+
+For general logarithm:
+\begin{equation}
+  \frac{d}{dx}(\log_a x) = \frac{1}{x\ln a}
+\end{equation}
+
+Example with changing base:
+\begin{equation}
+  \begin{gathered}
+  \log_ax = \frac{\ln x}{\ln a}
+  \frac{d}{dx}(\log_ax) = \frac{d}{dx}(\frac{\ln x}{\ln a}) =
+  = \frac{1}{\ln a} * \frac{d}{dx}(\ln x) =
+  = \frac{1}{\ln a} * \frac{1}{x} = \frac{1}{x\ln a}
+  \end{gathered}
+\end{equation}
+\subsection{Chain rule for logarithmic function}
+\begin{equation}
+  \begin{gathered}
+  y = \ln(2x+1)
+  y = \ln u
+  u = 2x+1
+  y' = \frac{1}{u}
+  u' = 2
+  \frac{dy}{dx} = \frac{1}{u} * 2 = \frac{2}{u} = \frac{2}{2x+1}
+  \end{gathered}
+\end{equation}
+
 \section{Integrals}
-Also called \textit{antiderivatives}. To represent integrals
+Also called \textit{antiderivatives}. To represent integrals we use an integral
+symbol.
+
+For example:
+
+\begin{equation}
+  \int 2x dx = x^2 + C
+\end{equation}
+
+Integrals like this are called 'indefinite integrals' and (in this case)
+function being integrated is called an 'integrand'.
 
 
 Integral of a sum of functions
@@ -413,6 +569,17 @@ so reversing:
 \begin{equation}
   \int a^x \, dx = \frac{a^x}{\ln a} + C
 \end{equation}
+
+Power rule for differentiation in reverse:
+\begin{equation}
+  \frac{d}{dx}(x^{n+1}) = (n+1)x^n
+\end{equation}
+same as:
+\begin{equation}
+  \int x^ndx = \frac{x^{n+1}}{n+1}
+\end{equation}
+
+Note: power rule does not work if $n=-1$
 
 Marked integral for future
 \begin{equation}
