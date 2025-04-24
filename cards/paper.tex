@@ -1,5 +1,10 @@
 \documentclass{article}
+
 \usepackage{amsmath,amssymb,amsthm,textcomp,mathtools}
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
 
 \title{On Math}
 \author{Jacek Walczak}
@@ -8,6 +13,10 @@
 \begin{document}
 
 \maketitle
+
+\section{General notes and todos}
+- I feel like multiline equations should have higher vertical spacing
+- Trigonometry values can be done in a single table
 
 \section{Default symbols}
 
@@ -88,6 +97,28 @@ When we have obtuse angle we need to subtract the result from $180$.
 
 
 \section{Complex numbers}
+Complex numbers can be represented by the point $(x, y)$ where $x$ is real axis and $y$
+is imaginary axis. We call this plane as a 'complex plane', also called 'Argand diagram',
+denoted as $C$.
+
+\subsection{Powers of $i$}
+\begin{equation}
+  \begin{gathered}
+    i^1 = \sqrt{-1} \\
+    i^2 = (\sqrt{-1})^2 = -1 \\
+    i^3 = -1 * i = -i \\
+    i^4 = (-1) * (-1) = 1
+  \end{gathered}
+\end{equation}
+and so on...
+
+\subsection{Magnitude of a complex number}
+The magnitude of a complex number is its distance from the origin $(0, 0)$.
+It is denoted az $|z|$. For complex number $z = a + bi$ magnitude is:
+\begin{equation}
+  |z| = \sqrt{a^2 + b^2}
+\end{equation}
+
 \subsection{Argument of a complex number}
 There is natural angle $\theta$ that \textit{z} makes with real x-axis. This angle is called \textit{the argument of z}. The numeric value of $arg(z)$ is given in radians and also
 \begin{equation}
@@ -316,10 +347,41 @@ For example for function $g(x) = -3\sqrt[4]{2x-1}-2$:
 \end{equation}
 
 \subsection{Reciprocal functions}
+
+\begin{figure}
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines=center,
+    xlabel=$x$,
+    ylabel=$y$,
+    title={Reciprocal Function $f(x) = \frac{1}{x}$},
+    xmin=-5, xmax=5,
+    ymin=-3, ymax=3,
+    xtick={-5,-4,-3,-2,-1,1,2,3,4,5},
+    ytick={-3,-2,-1,1,2,3},
+    grid=both,
+    domain=-5:5,
+    samples=200,
+    restrict y to domain=-3:3,
+]
+% Plot the function, excluding the region around x=0
+\addplot[blue, thick] {1/x};
+
+% Add asymptotes
+\draw[dashed, red] (axis cs:0,-3) -- (axis cs:0,3);
+\draw[dashed, red] (axis cs:-5,0) -- (axis cs:5,0);
+\end{axis}
+\end{tikzpicture}
+\caption{Graph of the reciprocal function $f(x) = \frac{1}{x}$}
+\end{figure}
+
+
+%TODO: image
 \begin{equation}
   f(x) = \frac{1}{x}
 \end{equation}
-
+When function is not transformed, it passes through points $(-1, -1)$ and $(1, 1)$.
 % TODO: not range?
 Domain of (transformed) reciprocal function
 \begin{equation}
@@ -329,7 +391,6 @@ has the horizontal asymptote $y = d$ therefore the range is
 \begin{equation}
 f(x) = \in (-\infty, d) \cup (d, \infty)
 \end{equation}
-
 % TODO: range
 Range of (transformed) reciprocal function
 \begin{equation}
@@ -511,44 +572,39 @@ For general logarithm:
 Example with changing base:
 \begin{equation}
   \begin{gathered}
-  \log_ax = \frac{\ln x}{\ln a}
-  \frac{d}{dx}(\log_ax) = \frac{d}{dx}(\frac{\ln x}{\ln a}) =
-  = \frac{1}{\ln a} * \frac{d}{dx}(\ln x) =
+  \log_ax = \frac{\ln x}{\ln a} \\
+  \frac{d}{dx}(\log_ax) = \frac{d}{dx}(\frac{\ln x}{\ln a}) = \\
+  = \frac{1}{\ln a} * \frac{d}{dx}(\ln x) = \\
   = \frac{1}{\ln a} * \frac{1}{x} = \frac{1}{x\ln a}
   \end{gathered}
 \end{equation}
 \subsection{Chain rule for logarithmic function}
 \begin{equation}
   \begin{gathered}
-  y = \ln(2x+1)
-  y = \ln u
-  u = 2x+1
-  y' = \frac{1}{u}
-  u' = 2
+  y = \ln(2x+1) \\
+  y = \ln u \\
+  u = 2x+1 \\
+  y' = \frac{1}{u} \\
+  u' = 2 \\
   \frac{dy}{dx} = \frac{1}{u} * 2 = \frac{2}{u} = \frac{2}{2x+1}
   \end{gathered}
 \end{equation}
 
 \section{Integrals}
 Also called \textit{antiderivatives}. To represent integrals we use an integral
-symbol.
-
-For example:
-
+symbol. For example:
 \begin{equation}
   \int 2x dx = x^2 + C
 \end{equation}
-
 Integrals like this are called 'indefinite integrals' and (in this case)
 function being integrated is called an 'integrand'.
 
-
-Integral of a sum of functions
+\subsection{Integral of a sum of functions}
 \begin{equation}
   \int f(x) \pm g(x) \, dx = \int f(x) \, dx \pm \int g(x) \, dx
 \end{equation}
 
-Integral of a reciprocal function
+\subsection{Integral of a reciprocal function}
 \begin{equation}
   \int \frac{1}{x} \, dx = \int \ln abs(x) + C
 \end{equation}
@@ -557,7 +613,7 @@ and also:
   \int \frac{1}{x} \, dx = \int \ln|x| + C = \ln abs(x) + \ln K = \ln (K (abs(x))
 \end{equation}
 
-Integral of an exponential function
+\subsection{Integral of an exponential function}
 \begin{equation}
   \int e^x \, dx = e^x + C
 \end{equation}
@@ -570,7 +626,7 @@ so reversing:
   \int a^x \, dx = \frac{a^x}{\ln a} + C
 \end{equation}
 
-Power rule for differentiation in reverse:
+\subsection{Power rule for differentiation in reverse}
 \begin{equation}
   \frac{d}{dx}(x^{n+1}) = (n+1)x^n
 \end{equation}
@@ -578,14 +634,12 @@ same as:
 \begin{equation}
   \int x^ndx = \frac{x^{n+1}}{n+1}
 \end{equation}
+Note: power rule does not work if $n=-1$!
 
-Note: power rule does not work if $n=-1$
-
+\section{Sandbox}
 Marked integral for future
 \begin{equation}
   \int_{a}^{b} f(x) \, dx
 \end{equation}
-
-
 
 \end{document}
