@@ -86,20 +86,17 @@ where \textit{C} is the measure of the angle between sides \textit{a} and \texti
 \begin{equation}
   \frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C}
 \end{equation}
-
 and also:
-
 \begin{equation}
   \frac{\sin A}{a} = \frac{\sin B}{b} = \frac{\sin C}{c}
 \end{equation}
-
 When we have obtuse angle we need to subtract the result from $180$.
 
 
 \section{Complex numbers}
 Complex numbers can be represented by the point $(x, y)$ where $x$ is real axis and $y$
-is imaginary axis. We call this plane as a 'complex plane', also called 'Argand diagram',
-denoted as $C$.
+is imaginary axis. We call this plane as a \textbf{complex plane}, also called
+\textit{Argand diagram}, denoted as $C$.
 
 \subsection{Powers of $i$}
 \begin{equation}
@@ -124,7 +121,6 @@ There is natural angle $\theta$ that \textit{z} makes with real x-axis. This ang
 \begin{equation}
 0 \leq arg(z) \leq 2\pi
 \end{equation}
-
 Example:
 \begin{equation}
   \begin{gathered}
@@ -137,16 +133,23 @@ Example:
 \section{Geometry}
 \subsection{Rigid motions}
 Or sometimes - any transformations that does not change the distances
-and angles between points in a figure. They are ANGLE-PRESERVING and
-DISTANCE-PRESERVING.
+and angles between points in a figure. They are \textbf{angle-preserving} and
+\textbf{distance-preserving}.
+
 
 Rigid motions types:
+
 - translations
+
 - rotations
+
 - reflections
 
+
 Not a rigid motions:
+
 - dilations
+
 - stretches
 
 \section{Displacement}
@@ -163,38 +166,51 @@ $t$ - time measured in seconds
 
 $g$ - $9.8\frac{m}{s^2}$ - constant acceleration due to gravity
 \section{Functions}
+\subsection{Standard form}
+\begin{equation}
+  ax + by = c
+\end{equation}
+\subsection{Parallel lines}
+Calculate equation of the parallel line:
+\begin{equation}
+  y - y_1 = m(x - x_1)
+\end{equation}
+Calculate a slope of a line given two points:
+\begin{equation}
+  m = \frac{y_2 - y_1}{x_2 - x_1}
+\end{equation}
 \subsection{Quadratic formula}
 \begin{equation}
   x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
 \end{equation}
 
 \subsection{Odd and even functions}
-
 Function is said to be odd if:
 \begin{equation}
   f(-x) = -f(x)
 \end{equation}
-
 Function is said to be even if:
 \begin{equation}
   f(-x) = f(x)
 \end{equation}
 \subsection{Factor cubics by grouping}
+For example to factor following function by grouping:
 
-$3x^3-6x^2+2x-4$
-
+\begin{equation}
+  3x^3-6x^2+2x-4
+\end{equation}
 1. group them
-
-$(3x^3-6x^2)+(2x-4)$
-
+\begin{equation}
+  (3x^3-6x^2)+(2x-4)
+\end{equation}
 2. factor larger terms so the leftover match
-
-$3x^2(x-2)+2(x-2)$
-
+\begin{equation}
+  3x^2(x-2)+2(x-2)
+\end{equation}
 3. factor out the binomial
-
-$(3x^2+2)(x-2)$
-
+\begin{equation}
+  (3x^2+2)(x-2)
+\end{equation}
 Note: not all cubics can be factored, however,
 of the cubics that can be factored,
 many can be factored by grouping
@@ -203,12 +219,12 @@ many can be factored by grouping
 For polynomial, if we know root, we can determine a factor of the
 polynomial. If $p(x)$ is a polynomial and $x=r$ is a root of $p(x)$ then
 \begin{equation}
-  \begin{gathered}
-  p(r) = 0 \\
-  so (x-r) is a factor of p(x) \\
-  generally: (ax-b) is a factor of a polynomial p(x) then \\
+  p(r) = 0
+\end{equation}
+so $(x-r)$ is a factor of $p(x)$
+generally: $(ax-b)$ is a factor of a polynomial $p(x)$ then:
+\begin{equation}
   x = \frac{b}{a} is a root of p(x)
-\end{gathered}
 \end{equation}
 
 \subsection{Rational roots theorem}
@@ -220,9 +236,8 @@ of its leading coefficient.
 Given a polynomial with integer coefficient, any rational roots of the polynomial must take the
 form:
 \begin{equation}
-  \pm \frac{factor of the constant term}{factor of the leading coefficient}
+  \pm \frac{factor  of  the  constant  term}{factor  of  the  leading  coefficient}
 \end{equation}
-
 For example:
 \begin{equation}
   f(x) = 8x^3 + 12x^2 + 6x + 2
@@ -235,13 +250,11 @@ so we have 16 possible roots:
     \pm \frac{2}{1}, \pm \frac{2}{2}, \pm \frac{2}{4}, \pm \frac{2}{8}
   \end{gathered}
 \end{equation}
-
 Removing the duplicates, we have 10 possible rational roots:
 \begin{equation}
   \pm \frac{1}{8}, \pm \frac{1}{4}, \pm \frac{1}{2}, \pm 1, \pm 2
 \end{equation}
-
-Note: it is about 'possible' rational roots.
+Note: it is about \textbf{possible} rational roots.
 
 \subsection{Function composition}
 \begin{equation}
@@ -249,21 +262,21 @@ Note: it is about 'possible' rational roots.
 \end{equation}
 \subsection{Inverse functions}
 Inverse functions are denoted by $f^{-1}(x)$.
-
 For $f(x)$ that maps $x=2$ to $y=0$ an inverse function $f^{-1}(x)$ instantiation would be
 $f^{-1}(0)=0$.
-
 Generally it is a simple composition:
 \begin{equation}
-  \begin{gathered}
-    f^{-1}(f(x)) = x \\
-    so \\
-    (f^{-1} \circ f)(x) = x
-  \end{gathered}
+  f^{-1}(f(x)) = x
+\end{equation}
+so
+\begin{equation}
+  (f^{-1} \circ f)(x) = x
 \end{equation}
 
-Calculate inverse function
+
+Calculate inverse function:
 1. swap $x$ and $y$
+
 2. solve for $y$
 
 Example:
@@ -279,8 +292,8 @@ Example:
   \end{gathered}
 \end{equation}
 
-Domain and range of inverse function:
 Domain of a function $f(x)$ is the range of its inverse function $f^{-1}(x)$.
+
 Range of a function $f(x)$ is the domain of its inverse function $f^{-1}(x)$.
 
 \subsection{Multiplicities of the roots of a polynomial}
@@ -288,8 +301,8 @@ Range of a function $f(x)$ is the domain of its inverse function $f^{-1}(x)$.
   p(x) = (x-5)^2(x+8)
 \end{equation}
 for that polynomial roots are $x=5$ and $x=-8$ but factor $(x-5)^2$
-appears TWICE so it is a MULTIPLE ROOT
-$(x+8)$ on the other hand is a SIMPLE ROOT.
+appears \textbf{twice} so it is a \textbf{multiple root}
+$(x+8)$ on the other hand is a \textbf{simple root}.
 
 \subsection{Intersection of a reciprocal function and a straight line}
 There are three possibilities when considering the intersection of a reciprocal
@@ -316,6 +329,7 @@ function and a line, we have to solve a system of two equations.
 
 \subsection{Rational functions}
 Horizontal asymptotes
+
 1. Identify the 'dominant term' which is a leading term of the polynomial though we
 usually ugnore the coefficients.
 
@@ -563,12 +577,10 @@ For natural logarithm:
 \begin{equation}
   \frac{d}{dx}(\ln x) = \frac{1}{x}
 \end{equation}
-
 For general logarithm:
 \begin{equation}
   \frac{d}{dx}(\log_a x) = \frac{1}{x\ln a}
 \end{equation}
-
 Example with changing base:
 \begin{equation}
   \begin{gathered}
