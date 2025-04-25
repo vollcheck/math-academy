@@ -418,8 +418,106 @@ f(x) = \in (-\infty, d) \cup (d, \infty)
 
 \subsection{Exponential functions}
 \subsection{Logarithmic functions}
+\subsection{Cubic curves functions}
+general function
+\begin{equation}
+  f(x) = ax^3 + bx^2 + cx + d
+\end{equation}
+range:
+\begin{equation}
+  y
+\end{equation}
+
 \section{Statistics}
 \subsection{Estimating a mean and variance}
+\begin{table}[htbp]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Reading times (in minutes)} & \textbf{Frequency} \\
+\hline
+$0 \leqslant x < 20$ & $5$ \\
+\hline
+$20 \leqslant x < 40$ & $10$ \\
+\hline
+$40 \leqslant x < 60$ & $8$ \\
+\hline
+$60 \leqslant x < 80$ & $7$ \\
+\hline
+\end{tabular}
+\caption{Estimating a mean and variance}
+\label{tab:estimating_a_mean_and_variance}
+\end{table}
+To estimate a mean we need a midpoint for $a \leqslant x < b$, so midpoint is $\frac{a+b}{2}$
+\begin{table}[htbp]
+\centering
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{Reading times (in minutes)} & \textbf{Frequency} & \textbf{Midpoint} & \textbf{F*M} \\
+\hline
+$0 \leqslant x < 20$ & $5$ & $10$ & $50$ \\
+\hline
+$20 \leqslant x < 40$ & $10$ & $30$ & $300$ \\
+\hline
+$40 \leqslant x < 60$ & $8$ & $50$ & $400$ \\
+\hline
+$60 \leqslant x < 80$ & $7$ & $70$ & $490$ \\
+\hline
+\end{tabular}
+\caption{Not sure what to type in here}
+\label{tab:estimating_a_mean_and_variance_2}
+\end{table}
+\begin{equation}
+  \overline{\rm x} = \frac{50+300+400+490}{30} = \frac{1240}{30} \approx 41.3
+\end{equation}
+Mean estimation for continous grouped data:
+\begin{equation}
+  \overline{\rm x} \approx \frac{1}{n}\Sigma^K_{i=1}(f_i * m_i)
+\end{equation}
+
+$f_i$ - frequency of the i-th class
+
+$m_i$ - midpoint of the i-th class
+
+$n$ - total number of the observations
+
+Variance estimation
+\begin{equation}
+  \sigma^2_n \approx \frac{1}{n}\Sigma^K_{i=1}(f_i * (m_i - \overline{\rm x})^2)
+\end{equation}
+
+$f_i$ - frequency of the i-th class
+
+$m_i$ - midpoint of the i-th class
+
+$n$ - total number of the observations
+
+$\overline{\rm x}$ - the mean
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+\textbf{Midpoint} & \textbf{F*M} & \textbf{$M_i * \overline{\rm x}$} & \textbf{($M_i - \overline{\rm x})^2$} & \textbf{$f_i * (M_i - \overline{\rm x})$} \\
+\hline
+$10$ & $50$ & $-31.333$ & $981.776$ & $4908.879$ \\
+\hline
+$10$ & $30$ & $-11.333$ & $128.444$ & $1284.437$ \\
+\hline
+$50$ & $400$ & $8.667$ & $75.112$ & $600.894$ \\
+\hline
+$70$ & $490$ & $28.667$ & $821.780$ & $5752.458$  \\
+\hline
+\end{tabular}
+\caption{Not sure what to type in here}
+\label{tab:estimating_a_mean_and_variance_3}
+\end{table}
+\begin{equation}
+  \begin{gathered}
+    \sigma^2_n \approx \frac{4908... + 1284... + 600... + 5752}{30} \approx 418.2  \\
+    \sigma_n \approx \sqrt{418.2} \approx 20.5
+  \end{gathered}
+\end{equation}
 \subsection{Sum of squares}
 \subsection{Linear coefficient}
 Signed with $\rho$ (Greek letter called 'rho').
