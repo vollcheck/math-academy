@@ -152,6 +152,33 @@ Not a rigid motions:
 
 - stretches
 
+\subsection{Euler on polyhedrons}
+A polyhedron is \textbf{convex} if and only if the following condition
+holds:
+If we take any two distinct points A and B that belong to the polyhedron
+then all the points on the line segment AB also belong to the polyhedron.
+
+Euler's formula for polyhedra for any convex polyhedron, the following
+relationship must be satisfied.
+\begin{equation}
+  V - E + F = 2
+\end{equation}
+
+$V$ - number of vertices
+
+$E$ - number of edges
+
+$F$ - number of faces
+
+The \textbf{Euler characteristic} of any polyhedra is denoted by the
+Greek letter $\aleph$ (``k-eye'') and is equal to the number:
+\begin{equation}
+  \aleph = V - E + F
+\end{equation}
+Any convex polyhedron has
+\begin{equation}
+  \aleph = 2
+\end{equation}
 \section{Displacement}
 \begin{equation}
   s = ut+\frac{1}{2}gt^2
@@ -551,11 +578,56 @@ Shortcut formulas:
     S_{xy} = \sum_{i=1}^n x_iy_i - \frac{1}{n} (\sum_{i=1}^n x_i)(\sum_{i=1}^n y_i)
   \end{gathered}
 \end{equation}
+\subsection{Linear regression}
+For a set of $n$ paired observations $x_i$ and $y_i$ the trend line is the
+straight line that best fits the data.
+Finding the equation of the trend line is called \textbf{linear regression}
+or best fit.
+We can show that the equation of the trend line is given by:
+\begin{equation}
+  y = mx * b
+\end{equation}
+1. Slope $m$
+\begin{equation}
+  m = \frac{S_{xy}}{S_{xx}}
+\end{equation}
+2. y-intercept - b:
+\begin{equation}
+  b = \overline{\rm y} - m\overline{\rm x}
+\end{equation}
+3. $\overline{\rm x}$ and $\overline{\rm y}$ are the means of the data sets:
+\begin{equation}
+  \overline{\rm x} = \frac{1}{n} \sum_{i=1}^nx_i, \overline{\rm y} = \frac{1}{n} \sum_{i=1}^ny_i,
+\end{equation}
+4. quantities $S_{xx}$ and $S_{xy}$:
+\begin{equation}
+  \begin{gathered}
+    S_{xx} = \sum_{i=1}^n (x_i - \overline{\rm x})^2 \\
+    S_{xy} = \sum_{i=1}^n(x_i - \overline{\rm x})(y_i - \overline{\rm y})
+  \end{gathered}
+\end{equation}
+There is some nice intuition behind the formula for $b$. The trend line
+always passes through the point $(\overline{\rm x}, \overline{\rm y})$.
+Therefore, this point must satisfy the trend line equation:
+\begin{equation}
+  y = mx + b
+\end{equation}
+We can then solve this equation for $b$. Also notice that $S_{xx}$ and $S_{xy}$
+are the summation terms that feature in the formulas for the variance and
+covariance respectively.
 \subsection{Linear coefficient}
 Signed with $\rho$ (Greek letter called 'rho').
 - $\rho = 1$ means perfect positive correlation
 - $\rho = -1$ means perfect negative correlation
 - $\rho = 0$ no (linear) correlation
+\subsection{Linear correlation coefficient}
+$|p| > 0.7$ - correlation is strong
+$0.3 \leqslant |p| \leqslant 0.7$ - correlation is weak
+$0 \leqslant |p| \leqslant 0.3$ - correlation is negligible
+\subsection{Linear correlation coefficient using sigma notation}
+\begin{equation}
+  p = \frac{S_{xy}}{\sqrt{S_{xx} * S_{yy}}}
+\end{equation}
 \section{Logarithms}
 \begin{table}[htbp]
 \centering
