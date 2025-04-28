@@ -519,6 +519,38 @@ $70$ & $490$ & $28.667$ & $821.780$ & $5752.458$  \\
   \end{gathered}
 \end{equation}
 \subsection{Sum of squares}
+Given that variance is:
+\begin{equation}
+  \sigma^2_x = \frac{1}{n} \sum_{i=1}^n(x_i - \overline{\rm x})^2
+\end{equation}
+The sum of squares is the same but with no fraction:
+\begin{equation}
+  S_{xx} = \sum_{i=1}^n(x_i - \overline{\rm x})^2
+\end{equation}
+Compare covariance with a sum of squares:
+\begin{equation}
+  \begin{gathered}
+    Cov(x,y) = \frac{1}{n} \sum_{i=1}^n(x_i - \overline{\rm x})(y_i - \overline{\rm y}) \\
+    S_{xy} = \sum_{i=1}^n(x_i - \overline{\rm x})(y_i - \overline{\rm y})
+  \end{gathered}
+\end{equation}
+Variance and covariance in terms of $S_{xx}$, $S_{yy}$ and $S_{xy}$:
+\begin{equation}
+  \begin{gathered}
+    \sigma^2_x = \frac{S_{xx}}{n} \\
+    \sigma^2_y = \frac{S_{yy}}{n} \\
+    Cov(x,y) = \frac{S_{xy}}{n}
+  \end{gathered}
+\end{equation}
+%TODO: some heading?
+Shortcut formulas:
+\begin{equation}
+  \begin{gathered}
+    S_{xx} = \sum_{i=1}^n x_i^2 - \frac{1}{n} (\sum_{i=1}^n x_i)^2 \\
+    S_{yy} = \sum_{i=1}^n y_i^2 - \frac{1}{n} (\sum_{i=1}^n y_i)^2 \\
+    S_{xy} = \sum_{i=1}^n x_iy_i - \frac{1}{n} (\sum_{i=1}^n x_i)(\sum_{i=1}^n y_i)
+  \end{gathered}
+\end{equation}
 \subsection{Linear coefficient}
 Signed with $\rho$ (Greek letter called 'rho').
 - $\rho = 1$ means perfect positive correlation
