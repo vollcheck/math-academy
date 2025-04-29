@@ -119,14 +119,14 @@ It is denoted az $|z|$. For complex number $z = a + bi$ magnitude is:
 \subsection{Argument of a complex number}
 There is natural angle $\theta$ that \textit{z} makes with real x-axis. This angle is called \textit{the argument of z}. The numeric value of $arg(z)$ is given in radians and also
 \begin{equation}
-0 \leq arg(z) \leq 2\pi
+  0 \leq arg(z) \leq 2\pi
 \end{equation}
 Example:
 \begin{equation}
   \begin{gathered}
-  z = 3 + 4i \\
-  \tan \theta = \frac{4}{3} \\
-  \theta = \arctan\frac{4}{3} \approx 0.93
+    z = 3 + 4i \\
+    \tan \theta = \frac{4}{3} \\
+    \theta = \arctan\frac{4}{3} \approx 0.93
   \end{gathered}
 \end{equation}
 
@@ -380,45 +380,45 @@ Horizontal shifts and stretches doesn't change the the range.
 For example for function $g(x) = -3\sqrt[4]{2x-1}-2$:
 \begin{equation}
   \begin{gathered}
-  \sqrt[4]{2x-1} \geqslant 0 \\
-  -3\sqrt[4]{2x-1} \leqslant 0 \\
-  -3\sqrt[4]{2x-1} \leqslant -2 \\
-  g(x) \leqslant -2
+    \sqrt[4]{2x-1} \geqslant 0 \\
+    -3\sqrt[4]{2x-1} \leqslant 0 \\
+    -3\sqrt[4]{2x-1} \leqslant -2 \\
+    g(x) \leqslant -2
   \end{gathered}
 \end{equation}
 
 \subsection{Reciprocal functions}
 
 \begin{figure}
-\centering
-\begin{tikzpicture}
-\begin{axis}[
-    axis lines=center,
-    xlabel=$x$,
-    ylabel=$y$,
-    title={Reciprocal Function $f(x) = \frac{1}{x}$},
-    xmin=-5, xmax=5,
-    ymin=-3, ymax=3,
-    xtick={-5,-4,-3,-2,-1,1,2,3,4,5},
-    ytick={-3,-2,-1,1,2,3},
-    grid=both,
-    domain=-5:5,
-    samples=200,
-    restrict y to domain=-3:3,
-]
-% Plot the function, excluding the region around x=0
-\addplot[blue, thick] {1/x};
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      axis lines=center,
+      xlabel=$x$,
+      ylabel=$y$,
+      title={Reciprocal Function $f(x) = \frac{1}{x}$},
+      xmin=-5, xmax=5,
+      ymin=-3, ymax=3,
+      xtick={-5,-4,-3,-2,-1,1,2,3,4,5},
+      ytick={-3,-2,-1,1,2,3},
+      grid=both,
+      domain=-5:5,
+      samples=200,
+      restrict y to domain=-3:3,
+      ]
+      % Plot the function, excluding the region around x=0
+      \addplot[blue, thick] {1/x};
 
-% Add asymptotes
-\draw[dashed, red] (axis cs:0,-3) -- (axis cs:0,3);
-\draw[dashed, red] (axis cs:-5,0) -- (axis cs:5,0);
-\end{axis}
-\end{tikzpicture}
-\caption{Graph of the reciprocal function $f(x) = \frac{1}{x}$}
+      % Add asymptotes
+      \draw[dashed, red] (axis cs:0,-3) -- (axis cs:0,3);
+      \draw[dashed, red] (axis cs:-5,0) -- (axis cs:5,0);
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Graph of the reciprocal function $f(x) = \frac{1}{x}$}
 \end{figure}
 
 
-%TODO: image
+% TODO: image
 \begin{equation}
   f(x) = \frac{1}{x}
 \end{equation}
@@ -426,20 +426,20 @@ When function is not transformed, it passes through points $(-1, -1)$ and $(1, 1
 % TODO: not range?
 Domain of (transformed) reciprocal function
 \begin{equation}
-f(x) = \frac{a}{bx+c} + d
+  f(x) = \frac{a}{bx+c} + d
 \end{equation}
 has the horizontal asymptote $y = d$ therefore the range is
 \begin{equation}
-f(x) = \in (-\infty, d) \cup (d, \infty)
+  f(x) = \in (-\infty, d) \cup (d, \infty)
 \end{equation}
 % TODO: range
 Range of (transformed) reciprocal function
 \begin{equation}
-f(x) = \frac{a}{bx+c} + d
+  f(x) = \frac{a}{bx+c} + d
 \end{equation}
 has the vertical asymptote $y = d$ therefore the range is
 \begin{equation}
-f(x) = \in (-\infty, d) \cup (d, \infty)
+  f(x) = \in (-\infty, d) \cup (d, \infty)
 \end{equation}
 
 
@@ -458,41 +458,41 @@ range:
 \section{Statistics}
 \subsection{Estimating a mean and variance}
 \begin{table}[htbp]
-\centering
-\begin{tabular}{|l|l|}
-\hline
-\textbf{Reading times (in minutes)} & \textbf{Frequency} \\
-\hline
-$0 \leqslant x < 20$ & $5$ \\
-\hline
-$20 \leqslant x < 40$ & $10$ \\
-\hline
-$40 \leqslant x < 60$ & $8$ \\
-\hline
-$60 \leqslant x < 80$ & $7$ \\
-\hline
-\end{tabular}
-\caption{Estimating a mean and variance}
-\label{tab:estimating_a_mean_and_variance}
+  \centering
+  \begin{tabular}{|l|l|}
+    \hline
+    \textbf{Reading times (in minutes)} & \textbf{Frequency} \\
+    \hline
+    $0 \leqslant x < 20$ & $5$ \\
+    \hline
+    $20 \leqslant x < 40$ & $10$ \\
+    \hline
+    $40 \leqslant x < 60$ & $8$ \\
+    \hline
+    $60 \leqslant x < 80$ & $7$ \\
+    \hline
+  \end{tabular}
+  \caption{Estimating a mean and variance}
+  \label{tab:estimating_a_mean_and_variance}
 \end{table}
 To estimate a mean we need a midpoint for $a \leqslant x < b$, so midpoint is $\frac{a+b}{2}$
 \begin{table}[htbp]
-\centering
-\begin{tabular}{|l|l|l|l|}
-\hline
-\textbf{Reading times (in minutes)} & \textbf{Frequency} & \textbf{Midpoint} & \textbf{F*M} \\
-\hline
-$0 \leqslant x < 20$ & $5$ & $10$ & $50$ \\
-\hline
-$20 \leqslant x < 40$ & $10$ & $30$ & $300$ \\
-\hline
-$40 \leqslant x < 60$ & $8$ & $50$ & $400$ \\
-\hline
-$60 \leqslant x < 80$ & $7$ & $70$ & $490$ \\
-\hline
-\end{tabular}
-\caption{Not sure what to type in here}
-\label{tab:estimating_a_mean_and_variance_2}
+  \centering
+  \begin{tabular}{|l|l|l|l|}
+    \hline
+    \textbf{Reading times (in minutes)} & \textbf{Frequency} & \textbf{Midpoint} & \textbf{F*M} \\
+    \hline
+    $0 \leqslant x < 20$ & $5$ & $10$ & $50$ \\
+    \hline
+    $20 \leqslant x < 40$ & $10$ & $30$ & $300$ \\
+    \hline
+    $40 \leqslant x < 60$ & $8$ & $50$ & $400$ \\
+    \hline
+    $60 \leqslant x < 80$ & $7$ & $70$ & $490$ \\
+    \hline
+  \end{tabular}
+  \caption{Not sure what to type in here}
+  \label{tab:estimating_a_mean_and_variance_2}
 \end{table}
 \begin{equation}
   \overline{\rm x} = \frac{50+300+400+490}{30} = \frac{1240}{30} \approx 41.3
@@ -522,22 +522,22 @@ $n$ - total number of the observations
 $\overline{\rm x}$ - the mean
 
 \begin{table}[htbp]
-\centering
-\begin{tabular}{|l|l|l|l|l|}
-\hline
-\textbf{Midpoint} & \textbf{F*M} & \textbf{$M_i * \overline{\rm x}$} & \textbf{($M_i - \overline{\rm x})^2$} & \textbf{$f_i * (M_i - \overline{\rm x})$} \\
-\hline
-$10$ & $50$ & $-31.333$ & $981.776$ & $4908.879$ \\
-\hline
-$10$ & $30$ & $-11.333$ & $128.444$ & $1284.437$ \\
-\hline
-$50$ & $400$ & $8.667$ & $75.112$ & $600.894$ \\
-\hline
-$70$ & $490$ & $28.667$ & $821.780$ & $5752.458$  \\
-\hline
-\end{tabular}
-\caption{Not sure what to type in here}
-\label{tab:estimating_a_mean_and_variance_3}
+  \centering
+  \begin{tabular}{|l|l|l|l|l|}
+    \hline
+    \textbf{Midpoint} & \textbf{F*M} & \textbf{$M_i * \overline{\rm x}$} & \textbf{($M_i - \overline{\rm x})^2$} & \textbf{$f_i * (M_i - \overline{\rm x})$} \\
+    \hline
+    $10$ & $50$ & $-31.333$ & $981.776$ & $4908.879$ \\
+    \hline
+    $10$ & $30$ & $-11.333$ & $128.444$ & $1284.437$ \\
+    \hline
+    $50$ & $400$ & $8.667$ & $75.112$ & $600.894$ \\
+    \hline
+    $70$ & $490$ & $28.667$ & $821.780$ & $5752.458$  \\
+    \hline
+  \end{tabular}
+  \caption{Not sure what to type in here}
+  \label{tab:estimating_a_mean_and_variance_3}
 \end{table}
 \begin{equation}
   \begin{gathered}
@@ -569,7 +569,7 @@ Variance and covariance in terms of $S_{xx}$, $S_{yy}$ and $S_{xy}$:
     Cov(x,y) = \frac{S_{xy}}{n}
   \end{gathered}
 \end{equation}
-%TODO: some heading?
+% TODO: some heading?
 Shortcut formulas:
 \begin{equation}
   \begin{gathered}
@@ -630,54 +630,54 @@ $0 \leqslant |p| \leqslant 0.3$ - correlation is negligible
 \end{equation}
 \section{Logarithms}
 \begin{table}[htbp]
-\centering
-\begin{tabular}{|l|l|}
-\hline
-\textbf{Property} & \textbf{Formula} \\
-\hline
-Product Rule & $\log_a(xy) = \log_a(x) + \log_a(y)$ \\
-\hline
-Quotient Rule & $\log_a\left(\frac{x}{y}\right) = \log_a(x) - \log_a(y)$ \\
-\hline
-Power Rule & $\log_a(x^n) = n \cdot \log_a(x)$ \\
-\hline
-Change of Base & $\log_a(x) = \frac{\log_b(x)}{\log_b(a)}$ \\
-\hline
-Equating arguments & $\log_af(x) = log_ag(x)$ is the same as $f(x) = g(x)$ \\
-\hline
-\end{tabular}
-\caption{Fundamental Properties of Logarithms}
-\label{tab:log_properties}
+  \centering
+  \begin{tabular}{|l|l|}
+    \hline
+    \textbf{Property} & \textbf{Formula} \\
+    \hline
+    Product Rule & $\log_a(xy) = \log_a(x) + \log_a(y)$ \\
+    \hline
+    Quotient Rule & $\log_a\left(\frac{x}{y}\right) = \log_a(x) - \log_a(y)$ \\
+    \hline
+    Power Rule & $\log_a(x^n) = n \cdot \log_a(x)$ \\
+    \hline
+    Change of Base & $\log_a(x) = \frac{\log_b(x)}{\log_b(a)}$ \\
+    \hline
+    Equating arguments & $\log_af(x) = log_ag(x)$ is the same as $f(x) = g(x)$ \\
+    \hline
+  \end{tabular}
+  \caption{Fundamental Properties of Logarithms}
+  \label{tab:log_properties}
 \end{table}
 
 % Approach 1: Looser Table with More Spacing
 \begin{table}[htbp]
-\centering
-\renewcommand{\arraystretch}{1.5} % Increases vertical spacing between rows
-\setlength{\tabcolsep}{15pt} % Increases horizontal spacing between columns
-\begin{tabular}{|l|p{5cm}|p{6cm}|}
-\hline
-\textbf{Property} & \textbf{Formula} & \textbf{Description} \\
-\hline
-\textbf{Product Rule} &
-$\log_a(xy) = \log_a(x) + \log_a(y)$ &
-The logarithm of a product equals the sum of the individual logarithms. This transforms multiplication into addition. \\
-\hline
-\textbf{Quotient Rule} &
-$\log_a\left(\frac{x}{y}\right) = \log_a(x) - \log_a(y)$ &
-The logarithm of a quotient equals the difference of logarithms. This transforms division into subtraction. \\
-\hline
-\textbf{Power Rule} &
-$\log_a(x^n) = n \cdot \log_a(x)$ &
-The logarithm of a value raised to a power equals the power multiplied by the logarithm. This transforms exponentiation into multiplication. \\
-\hline
-\textbf{Change of Base} &
-$\log_a(x) = \frac{\log_b(x)}{\log_b(a)}$ &
-This formula allows conversion between different logarithmic bases, useful when calculating logarithms with bases other than those built into calculators. \\
-\hline
-\end{tabular}
-\caption{Fundamental Properties of Logarithms}
-\label{tab:log_properties}
+  \centering
+  \renewcommand{\arraystretch}{1.5} % Increases vertical spacing between rows
+  \setlength{\tabcolsep}{15pt} % Increases horizontal spacing between columns
+  \begin{tabular}{|l|p{5cm}|p{6cm}|}
+    \hline
+    \textbf{Property} & \textbf{Formula} & \textbf{Description} \\
+    \hline
+    \textbf{Product Rule} &
+                            $\log_a(xy) = \log_a(x) + \log_a(y)$ &
+                                                                   The logarithm of a product equals the sum of the individual logarithms. This transforms multiplication into addition. \\
+    \hline
+    \textbf{Quotient Rule} &
+                             $\log_a\left(\frac{x}{y}\right) = \log_a(x) - \log_a(y)$ &
+                                                                                        The logarithm of a quotient equals the difference of logarithms. This transforms division into subtraction. \\
+    \hline
+    \textbf{Power Rule} &
+                          $\log_a(x^n) = n \cdot \log_a(x)$ &
+                                                              The logarithm of a value raised to a power equals the power multiplied by the logarithm. This transforms exponentiation into multiplication. \\
+    \hline
+    \textbf{Change of Base} &
+                              $\log_a(x) = \frac{\log_b(x)}{\log_b(a)}$ &
+                                                                          This formula allows conversion between different logarithmic bases, useful when calculating logarithms with bases other than those built into calculators. \\
+    \hline
+  \end{tabular}
+  \caption{Fundamental Properties of Logarithms}
+  \label{tab:log_properties}
 \end{table}
 
 % Approach 2: List Format with Titles for Each Property
@@ -685,28 +685,28 @@ This formula allows conversion between different logarithmic bases, useful when 
 
 \subsection*{Product Rule}
 \begin{equation}
-\log_a(xy) = \log_a(x) + \log_a(y)
+  \log_a(xy) = \log_a(x) + \log_a(y)
 \end{equation}
 
 The product rule allows us to express the logarithm of a product as the sum of logarithms. This is one of the fundamental properties that makes logarithms powerful for simplifying complex calculations. When we take the logarithm of a product of two numbers, we can break it down into the sum of the logarithms of each number.
 
 \subsection*{Quotient Rule}
 \begin{equation}
-\log_a\left(\frac{x}{y}\right) = \log_a(x) - \log_a(y)
+  \log_a\left(\frac{x}{y}\right) = \log_a(x) - \log_a(y)
 \end{equation}
 
 The quotient rule states that the logarithm of a quotient equals the logarithm of the numerator minus the logarithm of the denominator. This property transforms division operations into subtraction of logarithms, which is often easier to work with.
 
 \subsection*{Power Rule}
 \begin{equation}
-\log_a(x^n) = n \cdot \log_a(x)
+  \log_a(x^n) = n \cdot \log_a(x)
 \end{equation}
 
 The power rule tells us that the logarithm of a number raised to a power equals the power multiplied by the logarithm of the number. This property is especially useful when dealing with expressions containing exponents, as it converts exponentiation to multiplication.
 
 \subsection*{Change of Base Formula}
 \begin{equation}
-\log_a(x) = \frac{\log_b(x)}{\log_b(a)}
+  \log_a(x) = \frac{\log_b(x)}{\log_b(a)}
 \end{equation}
 
 The change of base formula allows us to convert logarithms from one base to another. This is particularly useful in practical applications since most calculators only directly compute natural logarithms (base $e$) and common logarithms (base 10). Using this formula, we can express logarithms of any base in terms of logarithms of a different base.
@@ -722,17 +722,102 @@ Sum rule:
   \sum_{i=1}^{n} (a_i+b_i) = \sum_{i=1}^{n} a_i + \sum_{i=1}^{n} b_i
 \end{equation}
 
-\section{Polynomial identities}
+\section{Polynomials}
+\subsection{Polynomial identities}
 \begin{flalign*}
-& (a + b)^2 = a^2 + 2ab + b^2 & \\
-& (a - b)^2 = a^2 - 2ab + b^2 & \\
-& (a + b)^3 = a^3 + 3a^2b + 3ab^2 + b^3 & \\
-& (a - b)^3 = a^3 - 3a^2b + 3ab^2 - b^3 & \\
-& a^2 - b^2 = (a + b)(a - b) & \\
-& a^3 - b^3 = (a - b)(a^2 + ab + b^2) & \\
-& a^3 + b^3 = (a + b)(a^2 - ab + b^2) &
+  & (a + b)^2 = a^2 + 2ab + b^2 & \\
+  & (a - b)^2 = a^2 - 2ab + b^2 & \\
+  & (a + b)^3 = a^3 + 3a^2b + 3ab^2 + b^3 & \\
+  & (a - b)^3 = a^3 - 3a^2b + 3ab^2 - b^3 & \\
+  & a^2 - b^2 = (a + b)(a - b) & \\
+  & a^3 - b^3 = (a - b)(a^2 + ab + b^2) & \\
+  & a^3 + b^3 = (a + b)(a^2 - ab + b^2) &
 \end{flalign*}
-
+\subsection{End behavior of general polynomials}
+Given polynomial
+\begin{equation}
+  f(x) = a_nx^n + a_{n-1}x^{n-1} + ... +a_1x + a_0
+\end{equation}
+with leading coefficient $a \neq 0$ the end behavior is always
+\begin{equation}
+  f(x) \rightarrow \infty
+\end{equation}
+or
+\begin{equation}
+  f(x) \rightarrow -\infty
+\end{equation}
+as
+\begin{equation}
+  x \rightarrow \pm \infty
+\end{equation}
+If the leading coefficient is positive then
+$f(x) \rightarrow \infty$ as $x \rightarrow \infty$,
+if negative then
+$f(x) \rightarrow -\infty$ as $x \rightarrow \infty$
+If leading exponent is \textbf{even}, then the end behavior as $x \rightarrow \infty$ \textbf{is the same} as the end behavior as $x \rightarrow -\infty$.
+Otherwise, if the leading exponent is \textbf{odd}, then the end behavior as $x \rightarrow +\infty$ is the opposite as $x \rightarrow -\infty$.
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{|l|l|l|l|}
+    \hline
+    \textbf{$n$} & \textbf{$a_n$} & \textbf{$x \rightarrow -\infty$} & \textbf{$x \rightarrow +\infty$} \\
+    \hline
+    even & $>0$ & $f(x) \rightarrow +\infty$ & $f(x) \rightarrow +\infty$ \\
+    \hline
+    even & $<0$ & $f(x) \rightarrow -\infty$ & $f(x) \rightarrow -\infty$ \\
+    \hline
+    odd & $>0$ & $f(x) \rightarrow -\infty$ & $f(x) \rightarrow +\infty$ \\
+    \hline
+    odd & $<0$ & $f(x) \rightarrow +\infty$ & $f(x) \rightarrow -\infty$ \\
+    \hline
+  \end{tabular}
+  \caption{End behavior of polynomials}
+  \label{tab:end_behavior_of_polynomials}
+\end{table}
+Mnemonic trick:
+substitute $+1$ and $-1$ into the leading term of polynomial, for example:
+\begin{equation}
+  \begin{gathered}
+    P(x) = 2x^3 - 6x^2 + 8 \\
+    \\
+    2(+1)^3 = +2 \\
+    P(x) \rightarrow +\infty \\
+    \text{as} \\
+    x \rightarrow +\infty \\
+    \\
+    2(-1)^3 = -2 \\
+    P(x) \rightarrow -\infty \\
+    \text{as} \\
+    x \rightarrow -\infty \\
+  \end{gathered}
+\end{equation}
+In general whenever $n$ is an \textit{even natural number} we have
+\begin{equation}
+  \begin{gathered}
+    \lim_{x \to +\infty}x^n = +\infty \\
+    \text{and} \\
+    \lim_{x \to -\infty}x^n = +\infty
+  \end{gathered}
+\end{equation}
+for $n = 2, 4, 6, ...$ but for \textit{odd natural number} though:
+\begin{equation}
+  \begin{gathered}
+    \lim_{x \to +\infty}x^n = +\infty \\
+    \text{and} \\
+    \lim_{x \to -\infty}x^n = -\infty
+  \end{gathered}
+\end{equation}
+for $n = 1, 3, 5, ...$. To compute the limit at infinity of general polynomial, we only need
+to consider the term with the largest expontent, called the \textbf{leading term}.
+All of the other terms can be disregarded.
+\begin{equation}
+  \begin{gathered}
+    \lim_{x \to \infty}(2x^3 - 7x^2 + 6x + 12) = \\
+    = \lim_{x \to \infty}(2x^3) = \\
+    = \lim_{x \to \infty}(x^3) = \\
+    = \infty
+  \end{gathered}
+\end{equation}
 \section{Derivatives}
 Average rate of change of the function $f(x)$ on the interval $[a, a+h]$:
 
@@ -786,21 +871,21 @@ For general logarithm:
 Example with changing base:
 \begin{equation}
   \begin{gathered}
-  \log_ax = \frac{\ln x}{\ln a} \\
-  \frac{d}{dx}(\log_ax) = \frac{d}{dx}(\frac{\ln x}{\ln a}) = \\
-  = \frac{1}{\ln a} * \frac{d}{dx}(\ln x) = \\
-  = \frac{1}{\ln a} * \frac{1}{x} = \frac{1}{x\ln a}
+    \log_ax = \frac{\ln x}{\ln a} \\
+    \frac{d}{dx}(\log_ax) = \frac{d}{dx}(\frac{\ln x}{\ln a}) = \\
+    = \frac{1}{\ln a} * \frac{d}{dx}(\ln x) = \\
+    = \frac{1}{\ln a} * \frac{1}{x} = \frac{1}{x\ln a}
   \end{gathered}
 \end{equation}
 \subsection{Chain rule for logarithmic function}
 \begin{equation}
   \begin{gathered}
-  y = \ln(2x+1) \\
-  y = \ln u \\
-  u = 2x+1 \\
-  y' = \frac{1}{u} \\
-  u' = 2 \\
-  \frac{dy}{dx} = \frac{1}{u} * 2 = \frac{2}{u} = \frac{2}{2x+1}
+    y = \ln(2x+1) \\
+    y = \ln u \\
+    u = 2x+1 \\
+    y' = \frac{1}{u} \\
+    u' = 2 \\
+    \frac{dy}{dx} = \frac{1}{u} * 2 = \frac{2}{u} = \frac{2}{2x+1}
   \end{gathered}
 \end{equation}
 
