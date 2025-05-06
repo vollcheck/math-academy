@@ -461,8 +461,24 @@ general function
 \end{equation}
 range:
 \begin{equation}
-  y
+  y \in (-\infty, \infty)
 \end{equation}
+At least one real root and at most three distinct roots. For example:
+\begin{equation}
+  \begin{gathered}
+    y = x^3 - x \\
+    0 = x(x^2 - 1) \\
+    0 = x(x - 1)(x + 1) \\
+    x = -1, 0, 1
+  \end{gathered}
+\end{equation}
+%TODO image
+
+- for single roots, the curve passes through the $x-axis$.
+
+- touches the $x-axis$ and turns around at the double root.
+
+- for root of multiplicity 3, the graph becomes \textit{tangent} (lies parallel) to the $x-axis$ and crosses it.
 
 \section{Statistics}
 \subsection{Estimating a mean and variance}
@@ -829,24 +845,65 @@ All of the other terms can be disregarded.
 \end{equation}
 \section{Derivatives}
 Average rate of change of the function $f(x)$ on the interval $[a, a+h]$:
-
 \begin{equation}
   \frac{\Delta y}{\Delta x} = \frac{f(a+h) - f(a)}{h}
 \end{equation}
-
 Instanteous rate of change of the function at the point $x=a$ is the limit of the average
 rate of change as $h \rightarrow 0$. It's denoted by $f'(a)$ and given by:
-
 \begin{equation}
   f'(a) = \lim_{h \rightarrow 0}\frac{f(a+h) - f(a)}{h}
 \end{equation}
-
 and its value is equal to the slope of the tangent line to the curve $y = f(x)$ at $x=a$.
 Also it can be defined as:
 \begin{equation}
   f'(a) = \lim_{x \rightarrow a}\frac{f(x) - f(a)}{x-a}
 \end{equation}
 
+\subsection{Tangent line equation}
+% TODO image
+Equation of the tangent line to the curve $y=f(x)$ at the point $P(x_1, y_1)$ is given by
+\begin{equation}
+  \begin{gathered}
+    y - y_1 = m(x - x_1) \\
+    \text{where:} \\
+    m = f'(x_1)
+  \end{gathered}
+\end{equation}
+
+\subsection{Normal line equation}
+% TODO image
+Equation of the normal line to the curve $y=f(x)$ at the point $P(x_1, y_1)$ is given by
+\begin{equation}
+  \begin{gathered}
+    y - y_1 = m(x - x_1) \\
+    \text{where:} \\
+    m = -\frac{1}{f'(x_1)}
+  \end{gathered}
+\end{equation}
+Normal line is just negative reciprocal of the slope of the \textbf{tangent line}.
+
+\subsection{Chain rule for differentiation}
+Derivative of a composite function $f(g(x))$ is given by:
+\begin{equation}
+  \frac{df}{dx} = \frac{df}{dg} * \frac{dg}{dx} = \frac{df}{dx}
+\end{equation}
+Example:
+\begin{equation}
+  \begin{gathered}
+    f(x) = (3x^4 + x^3)^5 \\
+    \frac{df}{dx} = ? \\
+    f = g^5 \\
+    g = 3x^4 + x^3 \\
+    \frac{df}{dx} = \frac{df}{dg} * \frac{dg}{dx} \\
+    \frac{df}{dg} = 5g^4 \\
+    \frac{dg}{dx} = 12x^3 + 3x^2 \\
+    \frac{df}{dx} = 5g^4 * (12x^3 + 3x^2) = 5(3x^4 + x^3)^4(12x^3 + 3x^2)
+  \end{gathered}
+\end{equation}
+The chain rule also can be expressed using primes instead of Leibniz notation
+\begin{equation}
+  f(g(x))' = f'(g(x)) * g'(x)
+\end{equation}
 \subsection{Differentiation of an exponent function}
 \begin{equation}
   \frac{d}{dx} (a^x) = a^x\ln a
