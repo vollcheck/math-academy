@@ -188,6 +188,8 @@ Any convex polyhedron has
 \begin{equation}
   \aleph = 2
 \end{equation}
+\section{Vectors}
+How to call that section?
 \section{Displacement}
 \begin{equation}
   s = ut+\frac{1}{2}gt^2
@@ -653,6 +655,35 @@ $0 \leqslant |p| \leqslant 0.3$ - correlation is negligible
 \begin{equation}
   p = \frac{S_{xy}}{\sqrt{S_{xx} * S_{yy}}}
 \end{equation}
+\subsection{Residuals and residual plots}
+For dataset of paired numerical observations $(x, y)$ and the corresponding
+linear regression model:
+\begin{equation}
+  \hat y = f(x)
+\end{equation}
+The \textbf{residual} for a particular observation $(x, y)$ is defined as:
+\begin{equation}
+  \begin{gathered}
+    \text{residual} = \text{actual} - \text{estimated} \\
+    y - f(x) = y - \hat y
+  \end{gathered}
+\end{equation}
+We subtract the estimated value predicted by model from the actual observed
+value:
+\begin{itemize}
+\item negative residual - model overestimates the true value
+\item positive residual - model underestimates the true value
+\end{itemize}
+
+Exercises:
+\begin{equation}
+  \begin{gathered}
+    \hat y = 0.02x + 0.8 \\
+    \text{for point} P(400, 8.3) \\
+    \hat y = 0.02 * 400 + 0.8 = 8.8 \\
+    y - \hat y = 8.3 - 8.8 = -0.5
+  \end{gathered}
+\end{equation}
 \section{Logarithms}
 \begin{table}[htbp]
   \centering
@@ -955,6 +986,28 @@ Example with changing base:
   \end{gathered}
 \end{equation}
 
+\subsection{Second and higher order derivatives}
+The second order derivative is the derivative of a functions first derivative.
+It can be written as $f''(x)$. Also
+\begin{equation}
+  \begin{gathered}
+    f''(x) = (f'(x))' \\
+    \text{example:} \\
+    f(x) = 4x^2 + 3x \\
+    f'(x) = 8x+3 \\
+    f''(x) = 8
+  \end{gathered}
+\end{equation}
+For Leibnitz notation it can be written as:
+\begin{equation}
+  \begin{gathered}
+    f''(x) = \frac{d^2f}{dx^2} = \frac{d}{dx}(\frac{df}{dx}) \\
+    \text{or, for y:} \\
+    \frac{d^2y}{dx^2} \\
+    \text{for higher order, in general:} \\
+    f^{(n)}(x) = \frac{d^n}{dx^n}f(x)
+  \end{gathered}
+\end{equation}
 \section{Integrals}
 Also called \textit{antiderivatives}. To represent integrals we use an integral
 symbol. For example:
