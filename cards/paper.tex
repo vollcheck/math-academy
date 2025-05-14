@@ -935,12 +935,21 @@ The chain rule also can be expressed using primes instead of Leibniz notation
 \begin{equation}
   f(g(x))' = f'(g(x)) * g'(x)
 \end{equation}
+\subsection{Product rule for differentiation}
+for $f(x) = u(x)*v(x)$ differentiation is:
+\begin{equation}
+  \begin{gathered}
+    f'(x) = u'(x)*v(x) + u(x)*v'(x) \\
+    \text{Using Leibnitz:} \\
+    \frac{dy}{dx} = \frac{du}{dx}*v + \frac{dv}{dx}*u
+  \end{gathered}
+\end{equation}
 \subsection{Quotient rule for differentiation}
 for $f(x) = \frac{u(x)}{v(x)}$ differentiation is:
 \begin{equation}
   \begin{gathered}
     f'(x) = \frac{u'(x)*v(x) - u(x)*v'(x)}{[v(x)]^2} \\
-    \text{Using Leibnitz:}
+    \text{Using Leibnitz:} \\
     \frac{d}{dx}(\frac{u}{v}) = \frac{v*\frac{du}{dx} - u*\frac{dv}{dx}}{v^2}
   \end{gathered}
 \end{equation}
