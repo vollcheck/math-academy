@@ -482,6 +482,69 @@ At least one real root and at most three distinct roots. For example:
 
 - for root of multiplicity 3, the graph becomes \textit{tangent} (lies parallel) to the $x-axis$ and crosses it.
 
+\subsection{Function continuity}
+If a function $f(x)$ is \textbf{continuous}, we can draw $y = f(x)$ without
+taking our pen off the paper. A function $f(x)$ is continuous at the point
+$x = c$ if:
+
+\begin{equation}
+  \lim_{x \to c}f(x) = f(c)
+\end{equation}
+
+To test for continuity of $f(x)$ we need to check three conditions:
+
+1. does $f(c)$ exists?
+We must check that $f(x)$ is defined at $x=c$
+
+2. does $\lim_{x \to c}f(x)$ exists?
+We must have to check that $\lim_{x \to c^-}f(x) = \lim{x \to c^+}f(x)$
+
+3. does $\lim{x \to c}f(x) = f(c)$
+
+If all of the above is yes, then the function \textbf{is continuous} at $x = c$.
+Otherwise we say there's \textbf{discontinuity} at $x = c$.
+
+\begin{tikzpicture}[scale=1.2]
+    % Draw axes
+    \draw[->] (-0.5,0) -- (5,0) node[right] {$x$};
+    \draw[->] (0,-0.5) -- (0,4) node[above] {$y$};
+
+    % Draw the function curve (looks like a logarithmic or similar curve)
+    % Left part approaching the discontinuity
+    \draw[thick] plot[domain=0.1:5, samples=100] (\x, {1.5 + 0.8*ln(\x)});
+
+    % Mark the discontinuity point
+    \coordinate (c) at (3,0);
+    \coordinate (leftlimit) at (3,2.38);
+
+    % Draw vertical dashed line at x = c
+    \draw[dashed] (3,0) -- (3,3.5);
+
+    % Draw horizontal dashed line showing limit
+    \draw[dashed] (0,2.4) -- (3,2.4);
+
+    % Mark points
+    \fill (leftlimit) circle (2pt);
+
+    % Add labels
+    \node[below] at (3,0) {$c$};
+    \node[left] at (0,2.4) {$\lim_{x \to c}f(x)$};
+    \node[right] at (4.5,2.5) {$y = f(x)$};
+
+    % Add limit annotations
+    \node at (2,0.5) {$x \to c^-$};
+    \node at (4,0.5) {$x \to c^+$};
+
+    % Add arrows showing approach for x
+    \draw[->] (2.5,0.3) -- (2.8,0.3);
+    \draw[->] (3.5,0.3) -- (3.2,0.3);
+
+    % Add arrows showing approach for y
+    \node at (0.5,2.8) {$\downarrow f(x)$};
+    \node at (0.5,2.0) {$\uparrow f(x)$};
+
+\end{tikzpicture}
+
 \section{Statistics}
 \subsection{Estimating a mean and variance}
 \begin{table}[htbp]
