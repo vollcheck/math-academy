@@ -23,6 +23,43 @@
 A - area
 
 \section{Trigonometry}
+-- TODO: properties of a trigonometric functions
+-- like limits, asymptotes etc
+\subsection{Properties of a sine function}
+zeros of the function
+x=n PI
+maxima
+x = pi/2 + 2npi
+minima
+x = -pi/2 + 2npi
+
+sine function is odd (which means it has a rotational symmetry around the origin)
+sin(-x) = -sin(x)
+
+\subsection{Properties of a cosine function}
+\subsection{Properties of a tangent function}
+\subsection{Properties of a cosecant function}
+y = cscx = 1/sinx
+asymptotes: x = n pi
+takes a value of 1 at x = pi/2 2npi
+takes a value of -1 at x = -pi/2 + 2npi
+cosecant is an odd function
+\subsection{Properties of a secant function}
+y = secx = 1/cosx
+asymptotes: x = +- pi/2, +- 3pi/2 etc
+takes a value of 1 at x = 2npi
+takes a value of -1 at x = pi + 2npi
+\subsection{Properties of a cotangent function}
+y = cotx = 1 /tanx = cosx/sinx
+for zeros x = pi/2 + pi n
+vertical asymptotes x = pi n
+period pi
+cotx is an odd function
+
+\subsection{Pythagorean identity}
+\begin{equation}
+  \cos^2(\theta) + \sin^2(\theta) = 1
+\end{equation}
 
 \begin{equation}
   \begin{gathered}
@@ -126,6 +163,18 @@ Differently for tangens though:
   \lim\limits_{x \to \frac{\pi}{2}^+}\tan x = -\infty
 \end{equation}
 
+\subsection{Double angle formula for sine}
+%TODO
+sin(x+y) = sinx cosy + cosx siny
+substituting x = y
+sin2x = 2sinx cosx
+it has many applications, it allows to simplyifying some trigonometric expressions
+and find the exact value for some non-special angles
+this is an identity! not equation, meaning it's true for all xes
+\subsection{Double angle formula for cosine}
+%TODO
+
+
 \section{Complex numbers}
 Complex numbers can be represented by the point $(x, y)$ where $x$ is real axis and $y$
 is imaginary axis. We call this plane as a \textbf{complex plane}, also called
@@ -214,6 +263,31 @@ Any convex polyhedron has
 \end{equation}
 \section{Vectors}
 How to call that section?
+\subsection{Dot product}
+for vectors a, b and c and scalar lambda
+
+- the dot product distributes over addition:
+(a+b) * c = a*c + b*c
+and
+c*(a+b) = a*c + b*c
+
+- the dot product is associative with respect to scalar multiplication
+(La) * b = L(a*b)
+and
+a*(Lb) = L(a*b)
+
+- the dot product is commutative
+a*b = b*a
+
+- two non-zero vectors a and b are perpendicular if the angle between them is $\theta = 90$
+a perpendicular symbol b
+
+in generat the dot product of two perpendicular vectors is 0. if a perpendicular b and theta is 90 then
+a*b = |a| * |b| * cos90 = |a| * |b| * 0 = 9
+
+if a and b are non-zero vectors you can do a conversion
+a perp b <=> a*b = 0
+
 \section{Displacement}
 \begin{equation}
   s = ut+\frac{1}{2}gt^2
@@ -568,6 +642,65 @@ Otherwise we say there's \textbf{discontinuity} at $x = c$.
     \node at (0.5,2.0) {$\uparrow f(x)$};
 
 \end{tikzpicture}
+
+\subsection{Continuity over an interval}
+In general it is said that function $f(x)$ is continuous over the interval $[a, b]$ if it is:
+
+- continuous on the open interval $(a, b)$
+
+- right continuous at $x = a$
+
+- left continuous at $x = b$
+
+\section{Probability}
+\subsection{Independent events}
+In probability, we say that two events are \textbf{independent} when the outcome of one
+event doesn't influence the outcome of the other event. Otherwise, the events are \textbf{dependent}.
+
+As for multiplication law for independent events:
+\begin{equation}
+  P(A \cap B) = P(A) * P(B)
+\end{equation}
+but, if A and B are independent, then the probability of B occuring is not influenced by
+whether or not A has occured, so:
+\begin{equation}
+  P(B|A) = P(B)
+\end{equation}
+and replacing it for the first law it goes:
+\begin{equation}
+  P(A \cap B) = P(A) * P(B)
+\end{equation}
+
+\subsection{The addition law of probability}
+\begin{equation}
+  P(A \cup B) = P(A) + P(B) - P(A \cap B)
+\end{equation}
+There's some ince intuition behind this law: by adding $P(A)$ to $P(B)$, we count $P(A \cap B)$ twice, hence we need to get rid of one.
+
+\subsection{The multiplication law for conditional probability}
+\begin{equation}
+  P(A|B) = \frac{P(A \cap B)}{P(B)}
+\end{equation}
+% TODO provide an example
+\subsection{The law of total probability}
+% TODO
+
+\section{Series and Sequences}
+It is important to understand the difference between a sequence and a series.
+A sequence is a list of numbers (separated by commmas).
+A series is what you get when you add all of the terms of a sequence together.
+\subsection{The sum of an arithmetic series}
+\begin{equation}
+  S_N = \sum^N_{n=1}a_n
+\end{equation}
+alternatively
+\begin{equation}
+  S_N = \frac{N}{2}(a_1 + a_N)\
+end{equation}
+also, if you don't know the last element of a series, you can use the following:
+\begin{equation}
+  S_N = \frac{N}{2}(a_1 + a_N) = \frac{N}{2}(2a_1 + d(N-1))
+\end{equation}
 
 \section{Statistics}
 \subsection{Estimating a mean and variance}
@@ -1135,6 +1268,12 @@ and also:
 \begin{equation}
   \int \frac{1}{x} \, dx = \int \ln|x| + C = \ln abs(x) + \ln K = \ln (K (abs(x))
 \end{equation}
+% TODO
+more accurate I guess:
+\begin{equation}
+  \int \frac{1}{ax+b} \, dx = \frac{1}{a} \ln|ax+b| + C
+\end{equation}
+
 
 \subsection{Integral of an exponential function}
 \begin{equation}
@@ -1170,6 +1309,21 @@ same as:
   \int x^ndx = \frac{x^{n+1}}{n+1}
 \end{equation}
 Note: power rule does not work if $n=-1$!
+
+\subsection{Left Riemann sum}
+- underestimates the actual area under the curve, if the function is increasing
+
+- overestimates, if the function is decreasing
+
+\subsection{Implicit differentiation}
+%TODO is it a good place?
+
+\subsection{Integrating with substitution}
+%TODO example \int 8(2x+5)^3dx
+general formula
+\begin{equation}
+  \int(ax+b)^n dx = \frac{1}{a(n+1)}(ax+b)^{n+1} + C, n \neq -1
+\end{equation}
 
 \section{Sandbox}
 Marked integral for future
