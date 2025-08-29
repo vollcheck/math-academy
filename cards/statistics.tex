@@ -1,0 +1,225 @@
+\documentclass{article}
+
+\usepackage{amsmath,amssymb,amsthm,textcomp,mathtools}
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\title{Statistics}
+\author{Jacek Walczak}
+\date{2025}
+
+\begin{document}
+
+\maketitle
+
+\section{Estimating a mean and variance}
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{|l|l|}
+    \hline
+    \textbf{Reading times (in minutes)} & \textbf{Frequency} \\
+    \hline
+    $0 \leqslant x < 20$ & $5$ \\
+    \hline
+    $20 \leqslant x < 40$ & $10$ \\
+    \hline
+    $40 \leqslant x < 60$ & $8$ \\
+    \hline
+    $60 \leqslant x < 80$ & $7$ \\
+    \hline
+  \end{tabular}
+  \caption{Estimating a mean and variance}
+  \label{tab:estimating_a_mean_and_variance}
+\end{table}
+To estimate a mean we need a midpoint for $a \leqslant x < b$, so midpoint is $\frac{a+b}{2}$
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{|l|l|l|l|}
+    \hline
+    \textbf{Reading times (in minutes)} & \textbf{Frequency} & \textbf{Midpoint} & \textbf{F*M} \\
+    \hline
+    $0 \leqslant x < 20$ & $5$ & $10$ & $50$ \\
+    \hline
+    $20 \leqslant x < 40$ & $10$ & $30$ & $300$ \\
+    \hline
+    $40 \leqslant x < 60$ & $8$ & $50$ & $400$ \\
+    \hline
+    $60 \leqslant x < 80$ & $7$ & $70$ & $490$ \\
+    \hline
+  \end{tabular}
+  \caption{Not sure what to type in here}
+  \label{tab:estimating_a_mean_and_variance_2}
+\end{table}
+\begin{equation}
+  \overline{\rm x} = \frac{50+300+400+490}{30} = \frac{1240}{30} \approx 41.3
+\end{equation}
+Mean estimation for continous grouped data:
+\begin{equation}
+  \overline{\rm x} \approx \frac{1}{n}\Sigma^K_{i=1}(f_i * m_i)
+\end{equation}
+
+$f_i$ - frequency of the i-th class
+
+$m_i$ - midpoint of the i-th class
+
+$n$ - total number of the observations
+
+Variance estimation
+\begin{equation}
+  \sigma^2_n \approx \frac{1}{n}\Sigma^K_{i=1}(f_i * (m_i - \overline{\rm x})^2)
+\end{equation}
+
+$f_i$ - frequency of the i-th class
+
+$m_i$ - midpoint of the i-th class
+
+$n$ - total number of the observations
+
+$\overline{\rm x}$ - the mean
+
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{|l|l|l|l|l|}
+    \hline
+    \textbf{Midpoint} & \textbf{F*M} & \textbf{$M_i * \overline{\rm x}$} & \textbf{($M_i - \overline{\rm x})^2$} & \textbf{$f_i * (M_i - \overline{\rm x})$} \\
+    \hline
+    $10$ & $50$ & $-31.333$ & $981.776$ & $4908.879$ \\
+    \hline
+    $10$ & $30$ & $-11.333$ & $128.444$ & $1284.437$ \\
+    \hline
+    $50$ & $400$ & $8.667$ & $75.112$ & $600.894$ \\
+    \hline
+    $70$ & $490$ & $28.667$ & $821.780$ & $5752.458$  \\
+    \hline
+  \end{tabular}
+  \caption{Not sure what to type in here}
+  \label{tab:estimating_a_mean_and_variance_3}
+\end{table}
+\begin{equation}
+  \begin{gathered}
+    \sigma^2_n \approx \frac{4908... + 1284... + 600... + 5752}{30} \approx 418.2  \\
+    \sigma_n \approx \sqrt{418.2} \approx 20.5
+  \end{gathered}
+\end{equation}
+\section{z-score}
+To compute the value of an observation $x$ which yields a given $z$-score in a data set
+with mean $\x$ and standard deviation $\gamma$ we can use the following formula:
+\begin{equation}
+  x = x + z * \gamma
+\end{equation}
+\section{Sum of squares}
+Given that variance is:
+\begin{equation}
+  \sigma^2_x = \frac{1}{n} \sum_{i=1}^n(x_i - \overline{\rm x})^2
+\end{equation}
+The sum of squares is the same but with no fraction:
+\begin{equation}
+  S_{xx} = \sum_{i=1}^n(x_i - \overline{\rm x})^2
+\end{equation}
+Compare covariance with a sum of squares:
+\begin{equation}
+  \begin{gathered}
+    Cov(x,y) = \frac{1}{n} \sum_{i=1}^n(x_i - \overline{\rm x})(y_i - \overline{\rm y}) \\
+    S_{xy} = \sum_{i=1}^n(x_i - \overline{\rm x})(y_i - \overline{\rm y})
+  \end{gathered}
+\end{equation}
+Variance and covariance in terms of $S_{xx}$, $S_{yy}$ and $S_{xy}$:
+\begin{equation}
+  \begin{gathered}
+    \sigma^2_x = \frac{S_{xx}}{n} \\
+    \sigma^2_y = \frac{S_{yy}}{n} \\
+    Cov(x,y) = \frac{S_{xy}}{n}
+  \end{gathered}
+\end{equation}
+% TODO: some heading?
+Shortcut formulas:
+\begin{equation}
+  \begin{gathered}
+    S_{xx} = \sum_{i=1}^n x_i^2 - \frac{1}{n} (\sum_{i=1}^n x_i)^2 \\
+    S_{yy} = \sum_{i=1}^n y_i^2 - \frac{1}{n} (\sum_{i=1}^n y_i)^2 \\
+    S_{xy} = \sum_{i=1}^n x_iy_i - \frac{1}{n} (\sum_{i=1}^n x_i)(\sum_{i=1}^n y_i)
+  \end{gathered}
+\end{equation}
+\section{Linear regression}
+For a set of $n$ paired observations $x_i$ and $y_i$ the trend line is the
+straight line that best fits the data.
+Finding the equation of the trend line is called \textbf{linear regression}
+or best fit.
+We can show that the equation of the trend line is given by:
+\begin{equation}
+  y = mx * b
+\end{equation}
+1. Slope $m$
+\begin{equation}
+  m = \frac{S_{xy}}{S_{xx}}
+\end{equation}
+2. y-intercept - b:
+\begin{equation}
+  b = \overline{\rm y} - m\overline{\rm x}
+\end{equation}
+3. $\overline{\rm x}$ and $\overline{\rm y}$ are the means of the data sets:
+\begin{equation}
+  \overline{\rm x} = \frac{1}{n} \sum_{i=1}^nx_i, \overline{\rm y} = \frac{1}{n} \sum_{i=1}^ny_i,
+\end{equation}
+4. quantities $S_{xx}$ and $S_{xy}$:
+\begin{equation}
+  \begin{gathered}
+    S_{xx} = \sum_{i=1}^n (x_i - \overline{\rm x})^2 \\
+    S_{xy} = \sum_{i=1}^n(x_i - \overline{\rm x})(y_i - \overline{\rm y})
+  \end{gathered}
+\end{equation}
+There is some nice intuition behind the formula for $b$. The trend line
+always passes through the point $(\overline{\rm x}, \overline{\rm y})$.
+Therefore, this point must satisfy the trend line equation:
+\begin{equation}
+  y = mx + b
+\end{equation}
+We can then solve this equation for $b$. Also notice that $S_{xx}$ and $S_{xy}$
+are the summation terms that feature in the formulas for the variance and
+covariance respectively.
+\section{Linear coefficient}
+Signed with $\rho$ (Greek letter called 'rho').
+- $\rho = 1$ means perfect positive correlation
+- $\rho = -1$ means perfect negative correlation
+- $\rho = 0$ no (linear) correlation
+\section{Linear correlation coefficient}
+$|p| > 0.7$ - correlation is strong
+$0.3 \leqslant |p| \leqslant 0.7$ - correlation is weak
+$0 \leqslant |p| \leqslant 0.3$ - correlation is negligible
+\section{Linear correlation coefficient using sigma notation}
+\begin{equation}
+  p = \frac{S_{xy}}{\sqrt{S_{xx} * S_{yy}}}
+\end{equation}
+\section{Residuals and residual plots}
+For dataset of paired numerical observations $(x, y)$ and the corresponding
+linear regression model:
+\begin{equation}
+  \hat y = f(x)
+\end{equation}
+The \textbf{residual} for a particular observation $(x, y)$ is defined as:
+\begin{equation}
+  \begin{gathered}
+    \text{residual} = \text{actual} - \text{estimated} \\
+    y - f(x) = y - \hat y
+  \end{gathered}
+\end{equation}
+We subtract the estimated value predicted by model from the actual observed
+value:
+\begin{itemize}
+\item negative residual - model overestimates the true value
+\item positive residual - model underestimates the true value
+\end{itemize}
+
+Exercises:
+\begin{equation}
+  \begin{gathered}
+    \hat y = 0.02x + 0.8 \\
+    \text{for point} P(400, 8.3) \\
+    \hat y = 0.02 * 400 + 0.8 = 8.8 \\
+    y - \hat y = 8.3 - 8.8 = -0.5
+  \end{gathered}
+\end{equation}
+
+\end{document}
